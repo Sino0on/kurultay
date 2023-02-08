@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block links %}
+    <link rel="stylesheet" href="{% static 'css/bundle.css' %}">
+    <link rel="stylesheet" href="{% static 'css/post.css' %}">
+{% endblock %}
+{% block content %}
+        <main>
+            <div class="container">
+                <div class="main">
+                    <section class="profile">
+                        <div class="profileList">
+                            <ul>
+                                <li>
+                                    <a href="indexActive.html">
+                                        <div><img src="{% static 'images/profile/list.svg' %}" alt="list"></div>
+                                        <h4>Лента</h4>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="chats.html">
+                                        <div> <span>2</span><img src="{% static 'images/profile/list.svg' %}" alt="list"></div>
+                                        <h4>Сообщения</h4>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="delegats.html">
+                                        <div><img src="{% static 'images/profile/list.svg' %}" alt="list"></div>
+                                        <h4>Делегаты</h4>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="rubrics.html">
+                                        <div><img src="{% static 'images/profile/list.svg' %}" alt="list"></div>
+                                        <h4>Рубрики</h4>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="profile.html">
+                                        <div><img src="{% static 'images/profile/profile.svg' %}" alt="list"></div>
+                                        <h4>Профиль</h4>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="profileSettings">
+                            <h3>Настройки</h3>
+                            <ul>
+                                <li>
+                                    <a href="settings.html">
+                                        <div><img src="{% static 'images/profile/settings.svg' %}" alt=""></div>
+                                        <h4>Настройки</h4>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="security.html">
+                                        <div><img src="{% static 'images/profile/security.svg' %}" alt=""></div>
+                                        <h4>Безопасность</h4>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="index.html">
+                                        <div><img src="{% static 'images/profile/quit.svg' %}" alt=""></div>
+                                        <h4>Выйти</h4>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+                    <section class="Post">
+                        <div class="PostImage" id="introJs">
+                            <img src="{{ news.image.url }}" alt="news">
+                            <div class="PostText">
+                                <h2>{{ news.title }}</h2>
+                                <p>{{ news.preview }}</p>
+                            </div>
+                        </div>
+                            <!-- <button class="btnYellow">Обсуждение</button> -->
+                        {{ news.content|safe }}
+                            
+                        <div class="prevEnd"></div>
+                        <div class="PostEnd">
+                            <div class="like">
+                                <img class="likeActive" src="{% static 'images/news/likeN.svg' %}" alt="">
+                                <img src="{% static 'images/news/like.svg' %}" alt="">
+                                    <!-- <span>Понравилось</span> -->
+                                <div class="likeCount">
+                                    <span>34k людям понравилось</span>
+                                </div>
+                            </div>
+                            <div class="share">
+                                <img src="{% static 'images/news/share.svg' %}" alt="">
+                                <span>Поделиться</span>
+                            </div>
+                        </div>
+                    </section>
+                    
+                </div>
+            </div>
+        </main>
+    </div>
+{% endblock %}

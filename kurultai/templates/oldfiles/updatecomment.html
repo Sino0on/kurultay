@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div>{{ form.post }}</div>
+        <div>{{ form.name }}</div>
+        <div>{{ form.email}}</div>
+        <div>{{ form.body }}</div>
+        <div>{{ form.created_on }}</div>
+        <div>{{ form.active }}</div>
+        <input type="submit" value="Изменить">
+    </form>
+</body>
+</html>

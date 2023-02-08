@@ -1,0 +1,225 @@
+main {
+  padding-top: 13px;
+  padding-bottom: 100px;
+  background: #F0F2F5;
+}
+@media (max-width: 740px) {
+  main {
+    padding-top: 23px;
+  }
+}
+main .main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  gap: 15px;
+}
+main .main .mainProf {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 14px;
+}
+main .main .mainProfHead {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #FFFFFF;
+  padding: 19px 23px 22px 30px;
+  border-radius: 14.9086px;
+}
+main .main .mainProfHead .about {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: end;
+  gap: 19px;
+}
+main .main .mainProfHead .about .ava {
+  width: 80px;
+}
+main .main .mainProfHead .about .ava img {
+  width: 100%;
+}
+main .main .mainProfHead .about .name {
+  margin-bottom: 15px;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+main .main .mainProfHead .about .name h2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-weight: 700;
+  line-height: 12px;
+  font-size: 16.9327px;
+  color: #050505;
+  margin-bottom: 6px;
+}
+main .main .mainProfHead .about .name div {
+  margin-left: 7px;
+  width: 9px;
+}
+main .main .mainProfHead .about .name div img {
+  width: 100%;
+}
+main .main .mainProfHead .about .name span {
+  font-weight: 400;
+  font-size: 10.2806px;
+  line-height: 12px;
+  color: #65676B;
+}
+main .main .mainProfHead .mainProfBtn {
+  border: none;
+  padding: 10px 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 7px;
+  background: #DC8400;
+  border-radius: 20px;
+  font-family: "Arial", sans-serif;
+  font-weight: 700;
+  font-size: 10.2806px;
+  line-height: 12px;
+  color: #FFFFFF;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+main .main .mainProfHead .mainProfBtn:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+main .main .info {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 350px;
+          flex: 0 1 350px;
+  background: #FFFFFF;
+  -webkit-box-shadow: 0px 1.09176px 1.09176px rgba(0, 0, 0, 0.1), 0px 0px 1.09176px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 1.09176px 1.09176px rgba(0, 0, 0, 0.1), 0px 0px 1.09176px rgba(0, 0, 0, 0.25);
+  border-radius: 8.73412px;
+  padding: 17px 22px 20px;
+}
+main .main .info h2 {
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-weight: 700;
+  font-size: 21.8353px;
+  line-height: 29px;
+  color: rgba(5, 5, 5, 0.8);
+  margin-bottom: 20px;
+}
+main .main .infoAbout {
+  background: #F0F2F5;
+  border-radius: 16.3765px;
+  padding: 26px 0 26px 32px;
+  margin-bottom: 23px;
+}
+main .main .infoAbout ul {
+  list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 12px;
+}
+main .main .infoAbout ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 19px;
+}
+main .main .infoAbout ul li a {
+  text-decoration: none;
+  color: #1877F2;
+}
+main .main .infoAbout ul li div {
+  width: 18px;
+}
+main .main .infoAbout ul li div img {
+  width: 100%;
+}
+main .main .infoAbout ul li span {
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 12.8885px;
+  line-height: 17px;
+  color: #050505;
+}
+main .main .infoDiscus {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 7px;
+  margin-top: 3px;
+}
+main .main .infoDiscus a {
+  text-decoration: none;
+  padding: 8px 0 8px 17px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 14px;
+}
+main .main .infoDiscus a .foto {
+  width: 38px;
+}
+main .main .infoDiscus a .foto img {
+  width: 100%;
+}
+main .main .infoDiscus a .title {
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+main .main .infoDiscus a .title h3 {
+  font-weight: 700;
+  font-size: 9.18835px;
+  line-height: 11px;
+  color: rgba(0, 0, 0, 0.8);
+  margin-bottom: 4px;
+}
+main .main .infoDiscus a .title p {
+  font-weight: 700;
+  font-size: 9.18835px;
+  line-height: 11px;
+  color: rgba(0, 0, 0, 0.5);
+}
+main .main .infoDiscus a .title p span {
+  font-weight: 400;
+  font-size: 7.54762px;
+  line-height: 9px;
+  margin-left: 3px;
+  color: rgba(0, 0, 0, 0.5);
+}

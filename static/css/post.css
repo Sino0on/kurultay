@@ -1,0 +1,240 @@
+main {
+  padding-top: 13px;
+  padding-bottom: 100px;
+  background: #F0F2F5;
+}
+@media (max-width: 740px) {
+  main {
+    padding-top: 23px;
+  }
+}
+main .main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  gap: 15px;
+}
+main .main .Post {
+  max-width: 712px;
+  background: #fff;
+  -webkit-box-shadow: 0px 0.943061px 0.943061px rgba(0, 0, 0, 0.1), 0px 0px 0.943061px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 0.943061px 0.943061px rgba(0, 0, 0, 0.1), 0px 0px 0.943061px rgba(0, 0, 0, 0.25);
+  border-radius: 14.2418px;
+  padding: 21px 18px 25px 18px;
+}
+@media (max-width: 860px) {
+  main .main .Post {
+    padding: 20px;
+  }
+}
+main .main .PostImage {
+  max-width: 678px;
+  position: relative;
+  margin-bottom: 20px;
+  height: 238px;
+  border-radius: 15px;
+  background-image: url(../images/news/choice.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+main .main .PostImage img {
+  width: 100%;
+  display: none;
+}
+main .main .PostText {
+  position: absolute;
+  font-family: "Sora", Arial, Helvetica, sans-serif;
+  left: 27px;
+  bottom: 18px;
+}
+@media (max-width: 840px) {
+  main .main .PostText {
+    left: 20px;
+    bottom: 10px;
+  }
+}
+main .main .PostText h2 {
+  width: 360px;
+  margin-left: 16px;
+  position: relative;
+  font-weight: 700;
+  font-size: 17.8px;
+  line-height: 22px;
+  color: #FFFFFF;
+  margin-bottom: 10px;
+}
+@media (max-width: 740px) {
+  main .main .PostText h2 {
+    font-size: 16px;
+    line-height: 20px;
+    height: 60px;
+    margin-left: 16px;
+  }
+}
+@media (max-width: 540px) {
+  main .main .PostText h2 {
+    width: auto;
+  }
+}
+main .main .PostText h2::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 6px;
+  left: -16px;
+  top: 0;
+  background: #DC8400;
+}
+@media (max-width: 740px) {
+  main .main .PostText h2::before {
+    left: -18px;
+    height: 50px;
+    width: 7px;
+  }
+}
+main .main .PostText p {
+  width: 306px;
+  font-weight: 400;
+  font-size: 11.4413px;
+  line-height: 14px;
+  color: rgba(255, 255, 255, 0.6);
+}
+@media (max-width: 740px) {
+  main .main .PostText p {
+    height: 30px;
+  }
+}
+@media (max-width: 540px) {
+  main .main .PostText p {
+    width: auto;
+    height: auto;
+  }
+}
+main .main .Post .text {
+  max-width: 664px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 14.1459px;
+  line-height: 19px;
+  color: #050505;
+  margin: 16px auto 21px;
+}
+@media (max-width: 740px) {
+  main .main .Post .text {
+    margin: 30px auto 50px;
+  }
+}
+main .main .Post .prevEnd {
+  margin-bottom: 30px;
+  border: 0.943061px solid #CED0D4;
+}
+main .main .PostEnd {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  font-size: 14.1459px;
+  line-height: 14px;
+  color: #65676B;
+}
+@media (max-width: 640px) {
+  main .main .PostEnd {
+    font-size: 12px;
+  }
+}
+main .main .PostEnd .like {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+main .main .PostEnd .like > span {
+  width: 160px;
+}
+@media (max-width: 640px) {
+  main .main .PostEnd .like > span {
+    width: 120px;
+  }
+}
+@media (max-width: 420px) {
+  main .main .PostEnd .like > span {
+    display: none;
+  }
+}
+main .main .PostEnd .like > img {
+  display: none;
+}
+main .main .PostEnd .like > .likeActive {
+  display: block;
+  width: 20px;
+  margin-right: 10px;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+@media (max-width: 640px) {
+  main .main .PostEnd .like > .likeActive {
+    width: 30px;
+    margin-right: 6px;
+  }
+}
+main .main .PostEnd .like > .likeActive:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+main .main .PostEnd .likeCount {
+  font-weight: 400;
+  line-height: 19px;
+}
+main .main .PostEnd .share {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+main .main .PostEnd .share img {
+  width: 20px;
+}
+@media (max-width: 640px) {
+  main .main .PostEnd .share {
+    gap: 4px;
+  }
+  main .main .PostEnd .share img {
+    width: 25px;
+  }
+}
+main .main .PostEnd .share:hover {
+  -webkit-transform: scale(1.12);
+          transform: scale(1.12);
+}
