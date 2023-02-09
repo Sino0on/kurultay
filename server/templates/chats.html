@@ -15,54 +15,56 @@
                         <div class="profileList">
                             <ul>
                                 <li>
-                                    <a href="indexActive.html">
+                                    <a href="{% url 'home' %}">
                                         <div><img src="{% static 'images/profile/list.svg' %}" alt="list"></div>
                                         <h4>Лента</h4>
                                     </a>
                                 </li>
                                 <li class="listActive">
-                                    <a href="chats.html">
+                                    <a href="{% url 'chats' %}">
                                         <div> <span>2</span><img src="{% static 'images/profile/list.svg' %}" alt="list"></div>
                                         <h4>Сообщения</h4>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="delegats.html">
+                                    <a href="{% url 'delegats' %}">
                                         <div><img src="{% static 'images/profile/list.svg' %}" alt="list"></div>
                                         <h4>Делегаты</h4>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="rubrics.html">
+                                    <a href="{% url 'rubrics' %}">
                                         <div><img src="{% static 'images/profile/list.svg' %}" alt="list"></div>
                                         <h4>Рубрики</h4>
                                     </a>
                                 </li>
+                                {% if user.is_authenticated %}
                                 <li>
-                                    <a href="profile.html">
+                                    <a href="{% url 'profile' user.pk %}">
                                         <div><img src="{% static 'images/profile/profile.svg' %}" alt="list"></div>
                                         <h4>Профиль</h4>
                                     </a>
                                 </li>
+                                {% endif %}
                             </ul>
                         </div>
                         <div class="profileSettings">
                             <h3>Настройки</h3>
                             <ul>
                                 <li>
-                                    <a href="settings.html">
+                                    <a href="{% url 'settings' %}">
                                         <div><img src="{% static 'images/profile/settings.svg' %}" alt=""></div>
                                         <h4>Настройки</h4>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="security.html">
+                                    <a href="{% url 'security' %}">
                                         <div><img src="{% static 'images/profile/security.svg' %}" alt=""></div>
                                         <h4>Безопасность</h4>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="index.html">
+                                    <a href="{% url 'logout' %}">
                                         <div><img src="{% static 'images/profile/quit.svg' %}" alt=""></div>
                                         <h4>Выйти</h4>
                                     </a>

@@ -29,7 +29,6 @@ ALLOWED_HOSTS = ['*']
 
 
 # Application definition
-
 INSTALLED_APPS = [
     'daphne',
     'channels',
@@ -48,6 +47,7 @@ INSTALLED_APPS = [
     'ckeditor_uploader',
     'django.contrib.humanize',
 ]
+
 
 
 ASGI_APPLICATION = 'kurultay.asgi.application'

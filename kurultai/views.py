@@ -12,20 +12,21 @@ from django.utils.encoding import force_bytes
 from django.contrib.auth.models import User
 from django.utils.http import urlsafe_base64_encode
 from django.views import generic
-
+from kurultai.models import Account
 from .forms import UserRegisterForm, RubricForm, CommentForm, Comment_mode_Form
 from .models import Account, Rubrics, Post, Comment
 
 
 def indexActive(request):
+    print(Account.objects.all())
     rubrics = Rubrics.objects.all().order_by('-id')
-
-    context = {'rubrics': rubrics, 'register_form': UserRegisterForm, 'login_form': AuthenticationForm }
+    context = {'rubrics': rubrics, 'register_form': UserRegisterForm, 'login_form': AuthenticationForm}
     return render(request, 'indexActive.html', context)
 
 
 def security(request):
     return render(request, 'security.html')
+
 
 def post_list(request, pk):
     post = Post.objects.filter(status=1, id=pk).order_by("-created_on")
@@ -35,7 +36,7 @@ def post_list(request, pk):
 
 
 def register(request):
-
+    print('kirdi')
     if request.method == "POST":
         form = UserRegisterForm(request.POST)
         if form.is_valid():
@@ -43,6 +44,7 @@ def register(request):
             login(request, user)
             messages.success(request, "Registration successful.")
             return redirect('/')
+        print(form.errors)
         messages.error(request, "Unsuccessful registration. Invalid information.")
     form = UserRegisterForm()
     # return render(request=request, template_name="indexActive.html", context={"register_form": form})
@@ -51,21 +53,24 @@ def register(request):
 
 def loginpage(request):
     if request.method == "POST":
+        print('login')
         form = AuthenticationForm(request, data=request.POST)
         if form.is_valid():
-            email = form.cleaned_data.get('email')
+            print('valid')
+            username = form.cleaned_data.get('username')
             password = form.cleaned_data.get('password')
-            user = authenticate(email=email, password=password)
+            user = authenticate(username=username, password=password)
             if user is not None:
                 login(request, user)
-                messages.info(request, f"You are now logged in as {email}.")
-                return redirect('index')
+                messages.info(request, f"You are now logged in as {username}.")
+                return redirect('/')
             else:
                 messages.error(request, "Invalid email or password.")
         else:
+            print(form.errors)
             messages.error(request, "Invalid email or password.")
     form = AuthenticationForm()
-    return render(request=request, template_name="indexactive.html", context={"login_form": form})
+    return redirect('/')
 
 
 def logoutpage(request):

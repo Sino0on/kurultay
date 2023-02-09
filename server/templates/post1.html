@@ -35,31 +35,33 @@
                                         <h4>Рубрики</h4>
                                     </a>
                                 </li>
+                                {% if user.is_authenticated %}
                                 <li>
-                                    <a href="profile.html">
+                                    <a href="{% url 'profile' user.pk %}">
                                         <div><img src="{% static 'images/profile/profile.svg' %}" alt="list"></div>
                                         <h4>Профиль</h4>
                                     </a>
                                 </li>
+                                {% endif %}
                             </ul>
                         </div>
                         <div class="profileSettings">
                             <h3>Настройки</h3>
                             <ul>
                                 <li>
-                                    <a href="settings.html">
+                                    <a href="{% url 'settings' %}">
                                         <div><img src="{% static 'images/profile/settings.svg' %}" alt=""></div>
                                         <h4>Настройки</h4>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="security.html">
+                                    <a href="{% url 'security' %}">
                                         <div><img src="{% static 'images/profile/security.svg' %}" alt=""></div>
                                         <h4>Безопасность</h4>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="index.html">
+                                    <a href="{% url 'logout' %}">
                                         <div><img src="{% static 'images/profile/quit.svg' %}" alt=""></div>
                                         <h4>Выйти</h4>
                                     </a>
@@ -76,7 +78,7 @@
                             </div>
                         </div>
                             <!-- <button class="btnYellow">Обсуждение</button> -->
-                        {{ news.content|safe }}
+                        <p>{{ news.content|safe }}</p>
                             
                         <div class="prevEnd"></div>
                         <div class="PostEnd">

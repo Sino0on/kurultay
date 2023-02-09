@@ -16,6 +16,7 @@ class Account(AbstractUser):
     is_zam = models.BooleanField(verbose_name=_('Заместитель Тор Ага'), default=False)
     is_katchy = models.BooleanField(verbose_name=_('Катчы'), default=False)
     is_delegat = models.BooleanField(verbose_name=_('Делегат'), default=False)
+    image = models.ImageField(verbose_name=_('Аватар'), upload_to='avatars/', blank=True, null=True)
 
     def __str__(self):
         return self.username

@@ -28,42 +28,44 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="delegats.html">
+                                    <a href="{% url 'delegats' %}">
                                         <div><img src="{% static 'images/profile/list.svg' %}" alt="list"></div>
                                         <h4>Делегаты</h4>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="rubrics.html">
+                                    <a href="{% url 'rubrics' %}">
                                         <div><img src="{% static 'images/profile/list.svg' %}" alt="list"></div>
                                         <h4>Рубрики</h4>
                                     </a>
                                 </li>
+                                {% if user.is_authenticated %}
                                 <li>
-                                    <a href="profile.html">
+                                    <a href="{% url 'profile' user.pk %}">
                                         <div><img src="{% static 'images/profile/profile.svg' %}" alt="list"></div>
                                         <h4>Профиль</h4>
                                     </a>
                                 </li>
+                                {% endif %}
                             </ul>
                         </div>
                         <div class="profileSettings">
                             <h3>Настройки</h3>
                             <ul>
                                 <li>
-                                    <a href="settings.html">
+                                    <a href="{% url 'settings' %}">
                                         <div><img src="{% static 'images/profile/settings.svg' %}" alt=""></div>
                                         <h4>Настройки</h4>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="security.html">
+                                    <a href="{% url 'security' %}">
                                         <div><img src="{% static 'images/profile/security.svg' %}" alt=""></div>
                                         <h4>Безопасность</h4>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="index.html">
+                                    <a href="{% url 'logout' %}">
                                         <div><img src="{% static 'images/profile/quit.svg' %}" alt=""></div>
                                         <h4>Выйти</h4>
                                     </a>
@@ -133,6 +135,11 @@
                                 <div class="formDate">
                                     <div class="pole">
                                         {% csrf_token %}
+                                        <label for="firstName">Логин</label>
+                                        {{ register_form.username }}
+                                        <span><img src="{% static 'images/security/forfio.svg' %}" alt="svg"></span>
+                                    </div>
+                                    <div class="pole">
                                         <label for="firstName">Имя</label>
                                         {{ register_form.first_name }}
                                         <span><img src="{% static 'images/security/forfio.svg' %}" alt="svg"></span>
@@ -219,20 +226,21 @@
                         <div id="modalAftoriz" class="modal">
                             <div class="close2"><img src="{% static 'images/people/plus.svg' %}" alt=""></div>
                             <div class="left"><img src="{% static 'images/security/welcome.png' %}" alt="img"></div>
-                            <form action="" class="aftorizRight">
+                            <form action="{% url 'login' %}" class="aftorizRight" method="post">
                                 <h2>Авторизация</h2>
                                 <div class="formDatas">
                                     <div class="pole">
-                                        <label for="email2">Email почта</label>
-                                        <input required placeholder="Введите вашу почту" id="email2" name="email2" type="email">
+                                        <label for="email2">Логин</label>
+                                        {{ login_form.username }}
+                                        {% csrf_token %}
                                         <span><img src="{% static 'images/security/forfio.svg' %}" alt="svg"></span>
                                     </div>
                                     <div class="pole">
                                         <label for="password">Пароль</label>
-                                        <input required id="password" placeholder="Введите ваш пароль" name="new" type="password">
+                                        {{ login_form.password }}
                                         <span class="eyeForpasword"><img src="{% static 'images/security/eye.svg' %}" alt="svg"></span>
                                     </div>
-                                    <a href="resetPassword.html">Забыли пароль?</a>
+                                    <a href="{% url 'reset_password' %}">Забыли пароль?</a>
                                 </div>
                                 <input class="submitBtn" type="submit" value="Войти">
                                 <p>У вас нет аккаунта? <span id="registracia">Регистрация</span></p>

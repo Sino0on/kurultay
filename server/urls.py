@@ -11,5 +11,9 @@ urlpatterns = [
     path('chat/<int:pk>', chat_detail, name='chat_detail'),
     path('chats/', chat_list, name='chats'),
     path('security/', security, name='security'),
+    path('settings/', settings, name='settings'),
+    path('profile/<int:pk>', profile, name='profile'),
+    path('rubrics/', security, name='rubrics'),
+    path('delegats/', delegats, name='delegats'),
 
 ]

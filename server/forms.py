@@ -26,5 +26,3 @@ class UserRegisterForm(UserCreationForm):
             'password2': forms.PasswordInput(attrs={'class': 'form-control'}),
 
         }
-
-K0550112011k

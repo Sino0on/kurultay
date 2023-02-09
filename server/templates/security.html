@@ -15,55 +15,57 @@
                         <div class="profileList">
                             <ul>
                                 <li>
-                                    <a href="indexActive.html">
-                                        <div><img src="images/profile/list.svg" alt="list"></div>
+                                    <a href="{% url 'home' %}">
+                                        <div><img src="{% static 'images/profile/list.svg' %}" alt="list"></div>
                                         <h4>Лента</h4>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="chats.html">
-                                        <div> <span>2</span><img src="images/profile/list.svg" alt="list"></div>
+                                    <a href="{% url 'chats' %}">
+                                        <div> <span>2</span><img src="{% static 'images/profile/list.svg' %}" alt="list"></div>
                                         <h4>Сообщения</h4>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="delegats.html">
-                                        <div><img src="images/profile/list.svg" alt="list"></div>
+                                    <a href="{% url 'delegats' %}">
+                                        <div><img src="{% static 'images/profile/list.svg' %}" alt="list"></div>
                                         <h4>Делегаты</h4>
                                     </a>
                                 </li>
-                                <li>
-                                    <a href="rubrics.html">
-                                        <div><img src="images/profile/list.svg" alt="list"></div>
+                                <li class="listActive">
+                                    <a href="{% url 'rubrics' %}">
+                                        <div><img src="{% static 'images/profile/list.svg' %}" alt="list"></div>
                                         <h4>Рубрики</h4>
                                     </a>
                                 </li>
+                                {% if user.is_authenticated %}
                                 <li>
-                                    <a href="profile.html">
-                                        <div><img src="images/profile/profile.svg" alt="list"></div>
+                                    <a href="{% url 'profile' user.pk %}">
+                                        <div><img src="{% static 'images/profile/profile.svg' %}" alt="list"></div>
                                         <h4>Профиль</h4>
                                     </a>
                                 </li>
+                                {% endif %}
                             </ul>
                         </div>
                         <div class="profileSettings">
                             <h3>Настройки</h3>
                             <ul>
                                 <li>
-                                    <a href="settings.html">
-                                        <div><img src="images/profile/settings.svg" alt=""></div>
+                                    <a href="{% url 'settings' %}">
+                                        <div><img src="{% static 'images/profile/settings.svg' %}" alt=""></div>
                                         <h4>Настройки</h4>
                                     </a>
                                 </li>
-                                <li class="listActive">
-                                    <a href="security.html">
-                                        <div><img src="images/profile/security.svg" alt=""></div>
+                                <li>
+                                    <a href="{% url 'security' %}">
+                                        <div><img src="{% static 'images/profile/security.svg' %}" alt=""></div>
                                         <h4>Безопасность</h4>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="index.html">
-                                        <div><img src="images/profile/quit.svg" alt=""></div>
+                                    <a href="{% url 'logout' %}">
+                                        <div><img src="{% static 'images/profile/quit.svg' %}" alt=""></div>
                                         <h4>Выйти</h4>
                                     </a>
                                 </li>
@@ -79,7 +81,7 @@
                                 <input placeholder="bakyt_1234@gmail.com" id="email" name="email" type="email">
                                 <button id="change">Изменить</button>
                             </div>
-                           <a href="resetPassword.html">Сбросить пароль</a>
+                           <a href="{% url 'resetPassword' %}">Сбросить пароль</a>
                             <div id="introJs" class="securityActions">
                                 <input class="reset" type="reset" value="Отменить">
                                 <input class="save" type="submit" value="Сохранить">
