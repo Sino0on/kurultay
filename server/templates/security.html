@@ -82,6 +82,7 @@
                                 <button id="change">Изменить</button>
                             </div>
                            <a href="{% url 'resetPassword' %}">Сбросить пароль</a>
+                            <a href="{% url 'resetPassword' %}">Поменять пароль</a>
                             <div id="introJs" class="securityActions">
                                 <input class="reset" type="reset" value="Отменить">
                                 <input class="save" type="submit" value="Сохранить">
@@ -224,7 +225,8 @@
                                         <input required id="Mobpassword" placeholder="Введите ваш пароль" name="new" type="password">
                                         <span class="eyeMobpassword"><img src="{% static 'images/security/eye.svg' %}" alt="svg"></span>
                                     </div>
-                                    <a href="resetPassword.html">Забыли пароль?</a>
+                                    <a href="{% url 'resetPassword' %}">Забыли пароль?</a>
+                                    <a href="{% url 'resetPassword' %}">Поменять пароль?</a>
                                     <p class="notAc">У вас нет аккаунта? <span id="registracia2">Регистрация</span></p>
                                     <input class="submitBtn" type="submit" value="Войти">
 
