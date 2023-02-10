@@ -5,13 +5,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'fonts/Segoe/stylesheet.css' %}">
-    <link rel="stylesheet" href="{% static 'fonts/Sora/stylesheet.css' %}">
+
+    <link rel="stylesheet" href="fonts/Segoe/stylesheet.css">
+    <link rel="stylesheet" href="fonts/Sora/stylesheet.css">
     <link rel="stylesheet" href="{% static 'css/aftorizHeader.css' %}">
 
     {% block links %}
     {% endblock %}
-
     <title>Kurultai beta</title>
 </head>
 <body>
@@ -20,10 +20,9 @@
             <div class="container">
                 <div class="menuInner">
                     <a href="{% url 'home' %}"><div class="menuLogo"><img src="{% static 'images/header/logo.svg' %}" alt="logo"></div></a>
-                    <form action="" class="search">
-                        <div class="searchButton"><img src="{% static 'images/header/search.svg' %}" alt=""></div>
-                        <input id="search" placeholder="Поиск обсуждений, людей..." type="search">
-                    </form>
+                    <div class="search">
+                        <img src="{% static 'images/header/logotext.svg' %}" alt="">
+                    </div>
                     {% if user.is_authenticated %}
                     <div class="menuRight">
                         <div class="ava">
@@ -53,7 +52,6 @@
                         </div >
                     </div>
                     {% endif %}
-
                 </div>
             </div>
         </header>
@@ -61,22 +59,7 @@
         {% block content %}
 
         {% endblock %}
-        <footer class="footer">
-            <div class="footerInner">
-                <a href="index.html">
-                    <div><img src="{% static 'images/modileFooter/home.svg' %}" alt=""></div>
-                </a>
-                <a href="delegats.html">
-                    <div><img src="{% static 'images/modileFooter/people.svg' %}" alt=""></div>
-                </a>
-                <a href="chats.html">
-                    <div><img src="{% static 'images/modileFooter/message.svg' %}" alt=""></div>
-                </a>
-                <a href="profile.html">
-                    <div><img src="{% static 'images/modileFooter/profile.svg' %}" alt=""></div>
-                </a>
-            </div>
-        </footer>
+
     </div>
 
 </body>

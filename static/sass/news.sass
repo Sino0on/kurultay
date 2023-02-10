@@ -4,6 +4,8 @@ main
     background: #F0F2F5
     @media (max-width: 740px) 
         padding-top: 23px
+    @media (max-width: 550px) 
+        padding-top: 10px
     .main
         display: flex
         justify-content: space-between
@@ -186,19 +188,13 @@ main
                         font-weight: 400
                         line-height: 19px
 
-                .share
-                    display: flex
-                    align-items: center
-                    gap: 8px
-                    cursor: pointer
-                    transition: .3s
-                    @media (max-width: 640px) 
-                        gap: 4px
-                    img
-                        width: 20px
-
-                    &:hover
-                        transform: scale(1.12)
+                .comments
+                    text-decoration: none
+                    p
+                        color: #65676B
+                        span
+                            color: #656762
+                            
 
         .people
             flex: 0 1 350px

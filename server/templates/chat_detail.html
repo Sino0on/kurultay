@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block links %}
-<link rel="stylesheet" href="{% static 'css/bundle.css' %}">
+<link rel="stylesheet" href="{% static 'css/bundleForChat.css' %}">
 <link rel="stylesheet" href="{% static 'css/chat1.css' %}">
 
 
@@ -73,9 +73,9 @@
                             </ul>
                         </div>
                     </section>
-                    <section class="chat">
+                    <section id="introJs"  class="chat">
                         <div class="chatHead">
-                            <a href="chats.html" class="back"><img src="{% static 'images/chat1/back.svg' %}" alt=""> <span>Назад</span></a>
+                            <a href="{% url 'chats' %}" class="back"><img src="{% static 'images/chat1/back.svg' %}" alt=""> <span>Назад</span></a>
                             <div class="chatTitle">
                                 <h3>{{ chat.title }}</h3>
                                 <p>{{ chat.users.count }} человека в группе</p>
@@ -86,7 +86,9 @@
                                 <div class="group"><img src="{% static 'images/chats/chat1.svg' %}" alt="call"></div>
                             </chat>
                         </div>
-                        <div id="messages" class="chatBody">
+                        <div class="golosovanie"><button>Голосование</button></div>
+                        <div class="chatBody" id="messages">
+
                             {% for i in messages %}
 
                             {% if i.user.id == user.id %}
@@ -118,6 +120,7 @@
                                 <button class="submit"><img src="{% static 'images/chat1/send.svg' %}" alt="microfon"></button>
                             </div>
                         </form>
+
                     </section>
 
                     <section class="rightSide">
@@ -136,8 +139,13 @@
                             <p class="text">{{ chat.voting_chat.content }}</p>
 <!--                            <form action="" class="voteForm">-->
                                 {% for i in chat.voting_chat.questions_vote.all %}
-                                <form action="{% url 'question_vote' %}" method="post">
-                                <button type="submit" name="question_id" value="{{ i.id }}">{{ i.title }}</button><p>{{ i.get_total_votes }}</p>
+                                <form action="{% url 'question_vote' %}" method="post" class="voteForm">
+                                    {% if user in i.users.all %}
+                                    <button style="color: #B36116" type="submit" name="question_id" value="{{ i.id }}">{{ i.title }} - {{ i.get_total_votes }}</button>
+                                    {% else %}
+                                    <button type="submit" name="question_id" value="{{ i.id }}">{{ i.title }} - {{ i.get_total_votes }}</button>
+                                    {% endif %}
+
                                     {% csrf_token%}
                                 </form>
 
@@ -279,6 +287,7 @@
 
         </main>
     </div>
-
+<script src="{% static 'js/app.js' %}"></script>
+<script src="{% static 'js/vote.js' %}"></script>
 
 {% endblock %}

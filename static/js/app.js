@@ -26,8 +26,5 @@ menu.onclick = (e) =>
 }
 const item = document.querySelectorAll('.menuActionsEb')
 for (i of item) i.onclick = (e) => clickBurger(e)
-profile.onclick = (e) =>
-{
-    clickBurger(e)
-}
+
 

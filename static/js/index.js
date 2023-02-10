@@ -77,6 +77,13 @@ const AMobPass = document.getElementById('Mobpassword')
 const AMobPassBtn = document.querySelector('.eyeMobpassword')
 
 
+function changeType(elem) {
+    if (elem.type === "password") {
+        elem.type = "text";
+    } else {
+        elem.type = "password";
+    }
+}
 
 newPasBtn.onclick = (e) => changeType(newPas)
 passPasBtn.onclick = (e) => changeType(passPas)
@@ -86,8 +93,34 @@ passwordMobPassBtn.onclick = (e) => changeType(passwordMobPass)
 AMobPassBtn.onclick = (e) => changeType(AMobPass)
 
 // onsubmit
+const FormA = document.querySelector('.aftorizRight')
+const FormR = document.querySelector('.right')
+const errorMessage = document.querySelector('.error')
+const inputEmail = document.querySelector('#email2')
+const inputPassword = document.querySelector('#password')
+const closeRed = document.querySelector('.closeRed')
+// FormA.onsubmit=(e)=>{
+//     e.preventDefault();
+//     if (inputPassword.value === 'kairat' && inputEmail.value === 'kairat@gmail.com') {
+//         window.location.href = "../indexActive.html"
+//     }
+//     else {
+//         errorMessage.classList.remove('hide')
+//         errorMessage.classList.add('showError')
+//     }
+// }
+// FormR.onsubmit = (e) =>
+// {
+//     e.preventDefault();
+//     window.location.href = "../indexActive.html"
+// }
 
+closeRed.onclick = () =>
+{
+    errorMessage.classList.remove('showError')
+    errorMessage.classList.add('hide')
 
+}
 
 const changeModal = (elem) =>
 {
@@ -101,7 +134,20 @@ const regMob1 = document.querySelector('.regMob1')
 const regMob2 = document.querySelector('.regMob2')
 const back = document.querySelector('.back')
 
-
+// MobForm1.onsubmit = (e) =>
+// {
+//     e.preventDefault()
+//     closeModal(regMob1)
+//     changeModal(regMob2)
+//     back.classList.remove('hide')
+//     back.classList.add('show')
+// }
+// regMob2.onsubmit = (e) =>
+// {
+//     e.preventDefault();
+//     e.target.reset()
+//     window.location.href = "../indexActive.html"
+// }
 
 // back
 back.onclick = () =>
@@ -126,3 +172,15 @@ regis2.onclick = () =>
     closeModal(diologA)
     openModal(diologM)
 }
+// formAMob.onsubmit = (e) =>
+// {
+//     e.preventDefault()
+//     if (AMobPass.value === 'kairat' && emailMob.value === 'kairat@gmail.com') {
+//         e.target.reset()
+//         window.location.href = "../indexActive.html"
+//     }
+//     else {
+//         errorMessage.classList.remove('hide')
+//         errorMessage.classList.add('showError')
+//     }
+// }

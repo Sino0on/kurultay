@@ -69,6 +69,9 @@
                             </ul>
                         </div>
                     </section>
+                    <section class="backBtn">
+                            <a href="indexActive.html" class="image"><img src="images/chat1/back.svg" alt="svg"><p>Назад</p></a>
+                    </section>
                     <section class="Post">
                         <div class="PostImage" id="introJs">
                             <img src="{{ news.image.url }}" alt="news">
@@ -78,7 +81,7 @@
                             </div>
                         </div>
                             <!-- <button class="btnYellow">Обсуждение</button> -->
-                        <p>{{ news.content|safe }}</p>
+                        <div style="padding: 20px">{{ news.content|safe }}</div>
                             
                         <div class="prevEnd"></div>
                         <div class="PostEnd">
@@ -90,9 +93,41 @@
                                     <span>34k людям понравилось</span>
                                 </div>
                             </div>
-                            <div class="share">
-                                <img src="{% static 'images/news/share.svg' %}" alt="">
-                                <span>Поделиться</span>
+                            <div href="post1.html" class="comments">
+                                <p>Комментарии <span>420</span></p>
+                            </div>
+                        </div>
+                        <div class="comment">
+                            <h2>Коментарий</h2>
+                            <form action="">
+                                <div class="forName">
+                                    <div>
+                                        <label for="text">Имя: </label>
+                                        <input required name="text" type="text" placeholder="Ваше Имя">
+                                    </div>
+                                    <div>
+                                        <label for="email">Email: </label>
+                                        <input name="email" required type="email" placeholder="Ваш Email">
+                                    </div>
+                                </div>
+                                <div class="forComment">
+                                    <input required type="text" placeholder="Ваш комментарий...">
+                                    <button type="submit"><img src="images/chat1/send.svg" alt=""></button>
+                                </div>
+                            </form>
+                            <div class="otherComments">
+                                <div class="otherCommentsE">
+                                    <h3>Кайрат</h3>
+                                    <p class="textComment">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique obcaecati nihil optio itaque, delectus distinctio?</p>
+                                </div>
+                                <div class="otherCommentsE">
+                                    <h3 class="nameC">Дастан</h3>
+                                    <p class="textComment">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique obcaecati nihil optio itaque, delectus distinctio? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aspernatur vero atque, veniam cumque non doloremque at fuga blanditiis, quibusdam expedita ab eius assumenda vel incidunt?</p>
+                                </div>
+                                <div class="otherCommentsE">
+                                    <h3>Байэл</h3>
+                                    <p class="textComment">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique obcaecati nihil optio itaque, delectus distinctio? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aspernatur vero atque, veniam cumque non doloremque at fuga blanditiis, quibusdam expedita ab eius assumenda vel incidunt?</p>
+                                </div>
                             </div>
                         </div>
                     </section>
@@ -100,5 +135,5 @@
                 </div>
             </div>
         </main>
-    </div>
+
 {% endblock %}

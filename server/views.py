@@ -34,7 +34,7 @@ class NewsListView(generic.ListView):
         context['register_form'] = UserRegisterForm
         print(context['register_form'])
         print('orin')
-        send_mail('Шлюха мразь', 'Привет Байэль это писмьо адресованао тебе ', 'dastan.kubanuulu1@gmail.com', ['baelbekbolotovb12356@gmail.com',], fail_silently=False)
+
         context['login_form'] = AuthenticationForm
         return context
 

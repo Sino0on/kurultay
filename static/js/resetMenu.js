@@ -48,8 +48,8 @@ firstEye.onclick =(e)=>changeType(old)
 secondEye.onclick =(e)=>changeType(newP)
 thirdEye.onclick = (e) => changeType(pass)
 
-document.getElementById('resetPassword').onsubmit = (e) =>
-{
-    e.preventDefault()
-    window.location.href = "../success.html"
-}
+// document.getElementById('resetPassword').onsubmit = (e) =>
+// {
+//     e.preventDefault()
+//     window.location.href = "../success.html"
+// }

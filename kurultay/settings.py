@@ -226,5 +226,5 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'dastan.kubanuulu1@gmail.com'
-EMAIL_HOST_PASSWORD = 'dastangreat2003'
+EMAIL_HOST_PASSWORD = 'atoxzukpfndshiaa'
 # ACCOUNT_EMAIL_VERIFICATION = 'none'

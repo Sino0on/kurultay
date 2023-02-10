@@ -8,6 +8,11 @@ main {
     padding-top: 23px;
   }
 }
+@media (max-width: 550px) {
+  main {
+    padding-top: 10px;
+  }
+}
 main .main {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -319,29 +324,14 @@ main .main .newsEnd .likeCount {
   font-weight: 400;
   line-height: 19px;
 }
-main .main .newsEnd .share {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  gap: 8px;
-  cursor: pointer;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+main .main .newsEnd .comments {
+  text-decoration: none;
 }
-@media (max-width: 640px) {
-  main .main .newsEnd .share {
-    gap: 4px;
-  }
+main .main .newsEnd .comments p {
+  color: #65676B;
 }
-main .main .newsEnd .share img {
-  width: 20px;
-}
-main .main .newsEnd .share:hover {
-  -webkit-transform: scale(1.12);
-          transform: scale(1.12);
+main .main .newsEnd .comments p span {
+  color: #656762;
 }
 main .main .people {
   -webkit-box-flex: 0;
