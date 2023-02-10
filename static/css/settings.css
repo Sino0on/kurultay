@@ -8,6 +8,15 @@ main {
     padding-top: 23px;
   }
 }
+@media (max-width: 740px) and (max-width: 550px) {
+  main {
+    padding-bottom: 0;
+    padding-top: 150px;
+  }
+  main .container {
+    padding: 0;
+  }
+}
 main .main {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -20,6 +29,20 @@ main .main {
           align-items: start;
   gap: 15px;
 }
+@media (max-width: 620px) {
+  main .main {
+    gap: 10px;
+  }
+}
+@media (max-width: 550px) {
+  main .main {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    display: block;
+    width: 100%;
+  }
+}
 main .main .setting {
   -webkit-box-flex: 0;
       -ms-flex: 0 1 530px;
@@ -30,21 +53,88 @@ main .main .setting {
   border-radius: 20px;
   padding: 15px 46px 160px 22px;
 }
+@media (max-width: 620px) {
+  main .main .setting {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: 10px;
+  }
+}
+@media (max-width: 550px) {
+  main .main .setting {
+    padding: 15px 46px 160px 22px;
+    margin-right: 0;
+  }
+}
 main .main .setting h3 {
   background: #F0F2F5;
   padding: 9px 15px 10px 15px;
   border-radius: 8px;
   font-weight: 700;
-  font-size: 12.1738px;
+  font-size: 16.1738px;
   line-height: 14px;
   color: rgba(0, 0, 0, 0.6);
+}
+@media (max-width: 550px) {
+  main .main .setting h3 {
+    display: none;
+    padding-top: 150px;
+  }
 }
 main .main .setting .avatar {
   width: 100px;
   margin: 17px auto;
+  position: relative;
+}
+main .main .setting .avatar .forCamera {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+  width: 35px;
+  position: absolute;
+}
+main .main .setting .avatar .forCamera:hover {
+  cursor: pointer;
+}
+main .main .setting .avatar .forCamera input {
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  opacity: 0;
+  position: absolute;
+}
+main .main .setting .avatar .forCamera span {
+  width: 30px;
+}
+main .main .setting .avatar .forCamera span img {
+  width: 100%;
+}
+main .main .setting .avatar .forCamera img {
+  width: 100%;
+  border-radius: 0;
+}
+@media (max-width: 550px) {
+  main .main .setting .avatar {
+    margin: -60px auto 56px;
+    border: 4px solid #fff;
+    border-radius: 50%;
+    width: 94px;
+  }
 }
 main .main .setting .avatar img {
   width: 100%;
+  border-radius: 50%;
 }
 main .main .settingForm {
   display: -webkit-box;
@@ -57,8 +147,15 @@ main .main .settingForm {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-right: 80px;
+  margin-right: 20px;
   gap: 20px;
+}
+@media (max-width: 840px) {
+  main .main .settingForm {
+    margin-right: auto;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
 }
 main .main .settingFormE {
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
@@ -73,11 +170,27 @@ main .main .settingFormE {
           align-items: center;
   gap: 6px;
 }
+@media (max-width: 550px) {
+  main .main .settingFormE {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    width: 100%;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+  }
+}
 main .main .settingFormE label {
   font-weight: 700;
-  font-size: 10px;
+  font-size: 12px;
   line-height: 21px;
   color: rgba(0, 0, 0, 0.6);
+}
+@media (max-width: 550px) {
+  main .main .settingFormE label {
+    font-size: 14.7382px;
+    line-height: 31px;
+  }
 }
 main .main .settingFormE input, main .main .settingFormE textarea {
   -webkit-box-flex: 0;
@@ -88,19 +201,32 @@ main .main .settingFormE input, main .main .settingFormE textarea {
   border-radius: 5px;
   padding: 2px 16px;
   font-weight: 400;
-  font-size: 10px;
+  font-size: 14px;
   line-height: 21px;
   color: rgba(0, 0, 0, 0.4);
   background: #F0F2F5;
 }
+@media (max-width: 550px) {
+  main .main .settingFormE input, main .main .settingFormE textarea {
+    font-size: 14.7382px;
+    line-height: 31px;
+    min-width: 100%;
+  }
+}
 main .main .settingFormE input:focus, main .main .settingFormE textarea:focus {
   color: #040404;
-  font-size: 12px;
+  font-size: 15px;
 }
 main .main .settingForm .forTextarea {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: start;
+}
+@media (max-width: 550px) {
+  main .main .settingForm .forTextarea {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
 }
 main .main .settingForm .forTextarea label {
   margin-left: -5px;
@@ -122,9 +248,32 @@ main .main .settingFormDate {
           align-items: center;
   gap: 6px;
 }
+@media (max-width: 840px) {
+  main .main .settingFormDate {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+  }
+}
+@media (max-width: 840px) {
+  main .main .settingFormDate {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: end;
+  }
+}
+@media (max-width: 550px) {
+  main .main .settingFormDate {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+  }
+}
 main .main .settingFormDate label {
   font-weight: 700;
-  font-size: 10px;
+  font-size: 14px;
   line-height: 21px;
   color: rgba(0, 0, 0, 0.6);
 }
@@ -134,7 +283,7 @@ main .main .settingFormDate input {
   border-radius: 5px;
   padding: 2px 16px;
   font-weight: 400;
-  font-size: 10px;
+  font-size: 14px;
   line-height: 21px;
   color: rgba(0, 0, 0, 0.4);
   background: #F0F2F5;
@@ -148,14 +297,24 @@ main .main .settingFormDate .forDate {
           align-items: center;
   gap: 10px;
 }
+@media (max-width: 550px) {
+  main .main .settingFormDate .forDate {
+    width: 100%;
+  }
+}
 main .main .settingFormDate .forDate input {
   width: 50px;
   padding: 2px 5px;
   text-align: center;
 }
+@media (max-width: 550px) {
+  main .main .settingFormDate .forDate input {
+    width: 80%;
+  }
+}
 main .main .settingFormDate .forDate input:focus {
   color: #040404;
-  font-size: 12px;
+  font-size: 15px;
 }
 main .main .settingFormDate .forDate input::-webkit-outer-spin-button, main .main .settingFormDate .forDate input::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -170,10 +329,20 @@ main .main .settingFormDate select {
   width: 144px;
   height: 24px;
   font-weight: 400;
-  font-size: 10px;
+  font-size: 14px;
   line-height: 21px;
   color: rgba(0, 0, 0, 0.6);
   text-align: center;
+}
+@media (max-width: 550px) {
+  main .main .settingFormDate select {
+    width: 340px;
+  }
+}
+@media (max-width: 450px) {
+  main .main .settingFormDate select {
+    width: 100%;
+  }
 }
 main .main .settingFormDate select option {
   font-weight: 400;
@@ -191,6 +360,21 @@ main .main .settingActions {
           justify-content: end;
   gap: 12px;
 }
+@media (max-width: 840px) {
+  main .main .settingActions {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+@media (max-width: 550px) {
+  main .main .settingActions {
+    margin-top: 100px;
+  }
+  main .main .settingActions .reset {
+    display: none;
+  }
+}
 main .main .settingActions input {
   cursor: pointer;
   background: #FFFFFF;
@@ -200,7 +384,7 @@ main .main .settingActions input {
   font-family: "Arial";
   padding: 2px 40px;
   font-weight: 700;
-  font-size: 10px;
+  font-size: 14px;
   line-height: 21px;
   color: #DC8400;
   -webkit-transition: 0.4s;
@@ -215,6 +399,13 @@ main .main .settingActions .save {
   color: #FFFFFF;
   border: none;
 }
+@media (max-width: 550px) {
+  main .main .settingActions .save {
+    border-radius: 40px;
+    font-size: 20px;
+    line-height: 40px;
+  }
+}
 main .main .settingNav {
   -webkit-box-flex: 0;
       -ms-flex: 0 1 350px;
@@ -224,12 +415,17 @@ main .main .settingNav {
   background: #FFFFFF;
   border-radius: 15.3648px;
 }
+@media (max-width: 790px) {
+  main .main .settingNav {
+    display: none;
+  }
+}
 main .main .settingNav h3 {
   background: #F0F2F5;
   padding: 9px 15px 10px 17px;
   border-radius: 8px;
   font-weight: 700;
-  font-size: 12.1738px;
+  font-size: 14.1738px;
   line-height: 14px;
   color: rgba(0, 0, 0, 0.6);
   margin-bottom: 10px;
@@ -252,7 +448,35 @@ main .main .settingNav ul .settingNavActive > a {
 main .main .settingNav ul li > a {
   text-decoration: none;
   font-weight: 700;
-  font-size: 12.1738px;
+  font-size: 14.1738px;
   line-height: 14px;
   color: rgba(0, 0, 0, 0.5);
+}
+main .headMob {
+  display: none;
+}
+@media (max-width: 550px) {
+  main .headMob {
+    display: block;
+    position: absolute;
+    top: 40px;
+    left: 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    width: 70%;
+    gap: 45px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  main .headMob h2 {
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+    color: rgba(0, 0, 0, 0.6);
+  }
 }

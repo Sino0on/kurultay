@@ -30,8 +30,8 @@ header .menuInner {
   height: 100%;
 }
 header .menuInner .menuLogo {
-  width: 74px;
-  height: 67px;
+  width: 101px;
+  height: 92px;
   margin-left: 46px;
   -webkit-transition: 0.3s;
   transition: 0.3s;
@@ -41,16 +41,16 @@ header .menuInner .menuLogo {
     margin-left: 0px;
   }
 }
-@media (max-width: 890px) {
-  header .menuInner .menuLogo {
-    width: 60px;
-    height: 54px;
-  }
-}
 @media (max-width: 660px) {
   header .menuInner .menuLogo {
-    width: 50px;
-    height: 45px;
+    width: 70px;
+    height: 63px;
+  }
+}
+@media (max-width: 360px) {
+  header .menuInner .menuLogo {
+    width: 60px;
+    height: 55px;
   }
 }
 header .menuInner .menuLogo img {
@@ -61,68 +61,17 @@ header .menuInner .menuLogo:hover {
           transform: scale(1.12);
 }
 header .menuInner .search {
-  background: rgba(255, 255, 255, 0.8);
-  border-radius: 42.6045px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-flex: 0;
-      -ms-flex: 0 1 350px;
-          flex: 0 1 350px;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  max-width: 200px;
+  padding: 0 10px;
+  margin: 0 10px;
 }
-@media (max-width: 960px) {
-  header .menuInner .search {
-    margin: 0 20px;
-  }
-}
-@media (max-width: 500px) {
+@media (max-width: 490px) {
   header .menuInner .search {
     display: none;
   }
 }
-header .menuInner .searchButton {
-  padding-left: 20px;
-  width: 21px;
-  -webkit-box-sizing: content-box;
-          box-sizing: content-box;
-  cursor: pointer;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-}
-header .menuInner .searchButton:hover {
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
-}
-header .menuInner .search input {
-  background: none;
-  border: none;
-  outline: none;
-  width: 90%;
-  font-family: "Sora", sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 13.2926px;
-  line-height: 17px;
-  color: rgba(15, 25, 26, 0.5);
-  padding: 11px 0 11px 13px;
-}
-@media (max-width: 660px) {
-  header .menuInner .search input {
-    width: 86%;
-  }
-}
-@media (max-width: 560px) {
-  header .menuInner .search input {
-    width: 80%;
-  }
-}
-header .menuInner .search input:focus {
-  font-size: 16px;
-  line-height: 18px;
-  color: #020202;
+header .menuInner .search img {
+  width: 100%;
 }
 header .menuInner .menuAftoriz {
   display: -webkit-box;
@@ -412,8 +361,12 @@ header .menuInner .menuRight .menuActionsE:hover {
     display: none;
   }
 }
+.modal .back {
+  display: none;
+}
 @media (max-width: 499px) {
   .modal .back {
+    display: block;
     cursor: pointer;
     position: absolute;
     top: 39px;
@@ -955,7 +908,7 @@ header .menuInner .menuRight .menuActionsE:hover {
   .regMob1 p, .regMob2 p, .AMob2 p {
     width: 380px;
     margin: 0 auto;
-    margin-top: 200px;
+    margin-top: 80px;
     text-align: center;
     font-weight: 400;
     font-size: 14.5874px;

@@ -22,7 +22,7 @@ class ChatConsumers(WebsocketConsumer):
         text_data_json = json.loads(text_data)
         message = text_data_json["message"]
         user_id = text_data_json["user"]
-        user = get_object_or_404(User, id=user_id)
+        user = get_object_or_404(Account, id=user_id)
         chat = get_object_or_404(Chat, id=int(self.room_group_name))
         # print(message)
         print(message)
@@ -49,7 +49,7 @@ class ChatConsumers(WebsocketConsumer):
         message = event['message']
         user_id = event["user"]
         print(user_id)
-        user = get_object_or_404(User, id=user_id)
+        user = get_object_or_404(Account, id=user_id)
 
         self.send(text_data=json.dumps(
             {

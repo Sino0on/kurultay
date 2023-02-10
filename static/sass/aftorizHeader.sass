@@ -14,18 +14,18 @@ header
         height: 100%
     
         .menuLogo
-            width: 74px
-            height: 67px
+            width: 101px
+            height: 92px
             margin-left: 46px
             transition: .3s
             @media (max-width: 890px) 
                 margin-left: 0px
-            @media (max-width: 890px) 
+            @media (max-width: 660px) 
+                width: 70px
+                height: 63px
+            @media (max-width: 360px)
                 width: 60px
-                height: 54px
-            @media (max-width: 660px)
-                width: 50px
-                height: 45px
+                height: 55px
             img
                 width: 100%
 
@@ -34,45 +34,13 @@ header
             
 
         .search
-            background: rgba(255, 255, 255, 0.8)
-            border-radius: 42.6045px
-            display: flex
-            flex: 0 1 350px
-            align-items: center
-            @media (max-width: 960px) 
-                margin: 0 20px
-            @media (max-width: 500px)
-                    display: none
-            &Button
-                padding-left: 20px
-                width: 21px
-                box-sizing: content-box
-                cursor: pointer
-                transition: .3s
-                &:hover
-                    transform: scale(1.2)
-            input
-                background: none
-                border: none
-                outline: none
-                width: 90%
-                font-family: 'Sora', sans-serif
-                font-style: normal
-                font-weight: 400
-                font-size: 13.2926px
-                line-height: 17px
-                color: rgba(15, 25, 26, 0.5)
-                padding: 11px 0 11px 13px
-                @media (max-width: 660px)
-                    width: 86%
-                @media (max-width: 560px)
-                    width: 80%
-                
-                &:focus
-                    font-size: 16px
-                    line-height: 18px
-                    color: #020202
-        
+            max-width: 200px
+            padding: 0 10px
+            margin: 0 10px
+            @media (max-width: 490px) 
+                display: none
+            img
+                width: 100%
         .menuAftoriz
             display: flex
             align-items: center
@@ -245,7 +213,9 @@ header
         @media (max-width: 499px) 
             display: none
     .back
+        display: none
         @media (max-width: 499px) 
+            display: block
             cursor: pointer
             position: absolute
             top: 39px
@@ -625,7 +595,7 @@ header
         p
             width: 380px
             margin: 0 auto
-            margin-top: 200px
+            margin-top: 80px
             text-align: center
             font-weight: 400
             font-size: 14.5874px

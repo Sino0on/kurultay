@@ -8,6 +8,14 @@ main {
     padding-top: 23px;
   }
 }
+@media (max-width: 550px) {
+  main {
+    padding: 0;
+  }
+  main .container {
+    padding: 0;
+  }
+}
 main .main {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -20,6 +28,11 @@ main .main {
           align-items: start;
   gap: 15px;
 }
+@media (max-width: 550px) {
+  main .main {
+    display: block;
+  }
+}
 main .main .chats {
   -webkit-box-flex: 0;
       -ms-flex: 0 1 530px;
@@ -29,6 +42,14 @@ main .main .chats {
           box-shadow: 0px 1.33333px 33.3333px rgba(169, 222, 249, 0.24);
   border-radius: 14px;
   padding: 13px 22px 300px 17px;
+  min-width: 320px;
+}
+@media (max-width: 550px) {
+  main .main .chats {
+    width: 100%;
+    border-radius: 0;
+    min-height: calc(100vh - 100px);
+  }
 }
 main .main .chatsHead {
   display: -webkit-box;
@@ -43,6 +64,18 @@ main .main .chatsHead {
   padding-bottom: 10px;
   position: relative;
 }
+@media (max-width: 550px) {
+  main .main .chatsHead {
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 16px;
+    background: #fff;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+  }
+}
 main .main .chatsHead::after {
   position: absolute;
   content: "";
@@ -51,6 +84,11 @@ main .main .chatsHead::after {
   bottom: 0px;
   height: 1px;
   background: rgba(0, 0, 0, 0.3);
+}
+@media (max-width: 550px) {
+  main .main .chatsHead::after {
+    display: none;
+  }
 }
 main .main .chatsHead form {
   background: #F0F2F5;
@@ -114,6 +152,12 @@ main .main .chatsHeadActions {
       -ms-flex-align: center;
           align-items: center;
   gap: 25px;
+  margin-left: 8px;
+}
+@media (max-width: 550px) {
+  main .main .chatsBlock {
+    padding-top: 60px;
+  }
 }
 main .main .chatsBlockE {
   text-decoration: none;
@@ -163,6 +207,8 @@ main .main .chatsBlockE .content .title {
 }
 main .main .chatsBlockE .content .title h3 {
   margin-bottom: 5px;
+  font-weight: 700;
+  font-size: 12.1738px;
 }
 main .main .chatsBlockE .content .title p {
   color: rgba(0, 0, 0, 0.5);
@@ -170,8 +216,8 @@ main .main .chatsBlockE .content .title p {
 }
 main .main .chatsBlockE .content .title p span {
   font-weight: 400;
-  font-size: 10px;
-  line-height: 11px;
+  font-size: 12px;
+  line-height: 12px;
   color: rgba(0, 0, 0, 0.5);
 }
 main .main .chatsBlockE .time {
@@ -200,6 +246,11 @@ main .main .SortChat {
   padding: 9px 10px 20px;
   background: #FFFFFF;
   border-radius: 15.3648px;
+}
+@media (max-width: 670px) {
+  main .main .SortChat {
+    display: none;
+  }
 }
 main .main .SortChat ul {
   list-style-type: none;
