@@ -3,6 +3,7 @@ from django.contrib import admin
 from .models import *
 from ckeditor.widgets import CKEditorWidget
 from ckeditor_uploader.widgets import CKEditorUploadingWidget
+from modeltranslation.admin import TranslationAdmin
 
 from .models import Rubrics, Account, Comment, Post
 
@@ -36,6 +37,10 @@ class NewsAdmin(admin.ModelAdmin):
 
 admin.site.register(Voting)
 admin.site.register(Question)
-admin.site.register(News, NewsAdmin)
+# admin.site.register(News, NewsAdmin)
 admin.site.register(Chat)
 admin.site.register(Message)
+
+@admin.register(News)
+class NewsAdmin(TranslationAdmin):
+    list_display = ('title', 'preview')
