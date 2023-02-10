@@ -74,7 +74,7 @@
                             <h2>Люди</h2>
                             <div class="lists">
                                 <ul>
-                                    <li>Делегаты</li>
+                                    <a href="?is_delegat=True/"><li>Делегаты</li></a>
                                     <li>Тор Ага</li>
                                     <li>Заместител</li>
                                     <li>Катчы</li>
@@ -116,62 +116,19 @@
                         </div>
                         <div class="delegatsBody">
                             <div class="peoples">
+                                {% for i in delegats %}
                                 <div class="peoplesI">
                                     <div class="ava"><img src="{% static 'images/delegats/user1.svg' %}" alt="user"></div>
                                     <div class="name">
-                                        <h3>Талгат Бакытов</h3>
-                                        <p>Депутат</p>
+                                        <h3>{{ i.get_full_name }}</h3>
+                                        <p>{{ i.occupation }}</p>
                                     </div>
                                 </div>
-                                <div class="peoplesI">
-                                    <div class="ava"><img src="{% static 'images/delegats/user2.svg' %}" alt="user"></div>
-                                    <div class="name">
-                                        <h3>Талгат Бакытов</h3>
-                                        <p>Депутат</p>
-                                    </div>
-                                </div>
-                                <div class="peoplesI">
-                                    <div class="ava"><img src="{% static 'images/delegats/user3.svg' %}" alt="user"></div>
-                                    <div class="name">
-                                        <h3>Талгат Бакытов</h3>
-                                        <p>Депутат</p>
-                                    </div>
-                                </div>
-                                <div class="peoplesI">
-                                    <div class="ava"><img src="{% static 'images/delegats/user4.svg' %}" alt="user"></div>
-                                    <div class="name">
-                                        <h3>Талгат Бакытов</h3>
-                                        <p>Депутат</p>
-                                    </div>
-                                </div>
-                                <div class="peoplesI">
-                                    <div class="ava"><img src="{% static 'images/delegats/user5.svg' %}" alt="user"></div>
-                                    <div class="name">
-                                        <h3>Талгат Бакытов</h3>
-                                        <p>Депутат</p>
-                                    </div>
-                                </div>
-                                <div class="peoplesI">
-                                    <div class="ava"><img src="{% static 'images/delegats/user6.svg' %}" alt="user"></div>
-                                    <div class="name">
-                                        <h3>Талгат Бакытов</h3>
-                                        <p>Депутат</p>
-                                    </div>
-                                </div>
-                                <div class="peoplesI">
-                                    <div class="ava"><img src="{% static 'images/delegats/user7.svg' %}" alt="user"></div>
-                                    <div class="name">
-                                        <h3>Талгат Бакытов</h3>
-                                        <p>Депутат</p>
-                                    </div>
-                                </div>
-                                <div id="introJs" class="peoplesI">
-                                    <div class="ava"><img src="{% static 'images/delegats/user8.svg' %}" alt="user"></div>
-                                    <div class="name">
-                                        <h3>Талгат Бакытов</h3>
-                                        <p>Депутат</p>
-                                    </div>
-                                </div>
+                                {% endfor %}
+                                <form action="" method="get">
+                            {{ filter.first_name }}
+                                    <button type="submit">OK</button>
+                                </form>
                             </div>
 
                             <div class="reitings">

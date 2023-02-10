@@ -5,6 +5,7 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404
 from django.contrib import messages
 from .forms import *
+from .filters import UserFilterForm
 from django.core.mail import send_mail
 from django.contrib.auth.forms import AuthenticationForm, PasswordResetForm, PasswordChangeForm
 from django.contrib.auth.views import PasswordChangeView
@@ -96,6 +97,28 @@ def security(request):
 def profile(request, pk):
     account = get_object_or_404(Account, id=pk)
     return render(request, 'profile.html', {'account': account})
+
+
+class DelegatListView(generic.ListView):
+    model = Account
+    queryset = Account.objects.filter(is_delegat=True)
+    context_object_name = 'delegats'
+    template_name = 'delegats.html'
+    filter_class = UserFilterForm
+    paginate_by = 10
+
+    def get_queryset(self):
+        query = Account.objects.filter(is_delegat=True)
+        filter = UserFilterForm(self.request.GET, queryset=query)
+        query = filter.qs
+        return query
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super(DelegatListView, self).get_context_data(**kwargs)
+        context['filter'] = UserFilterForm().form
+        print('yes')
+        print(context['filter'])
+        return context
 
 
 def delegats(request):

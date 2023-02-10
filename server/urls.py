@@ -1,5 +1,5 @@
 from django.urls import path
-from server.views import *
+from .views import *
 from django.contrib.auth import views as auth_views
 
 
@@ -15,7 +15,7 @@ urlpatterns = [
     path('settings/', settings, name='settings'),
     path('profile/<int:pk>', profile, name='profile'),
     path('rubrics/', security, name='rubrics'),
-    path('delegats/', delegats, name='delegats'),
+    path('delegats/', DelegatListView.as_view(), name='delegats'),
     path('createrubrics/', createrubrics, name='createrubrics'),
     path('deleterubrics/<int:pk>/', deleterubrics, name='deleterubrics'),
     path('post_detail/<int:pk>/', post_detail, name='post_detail'),

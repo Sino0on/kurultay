@@ -6,7 +6,13 @@ from django.utils.translation import gettext_lazy as _
 STATUS = ((0, "Draft"), (1, "Publish"))
 
 
+class Region(models.Model):
+    title = models.CharField(max_length=123)
+    created_date = models.DateTimeField(auto_now_add=True)
+
+
 class Account(AbstractUser):
+    email = models.EmailField(unique=True)
     birth_of_place = models.CharField(verbose_name=_('Место рождения'), max_length=50, blank=True, null=True)
     birth_of_date = models.DateField(verbose_name=_('Дата рождения'), blank=True, null=True)
     living_place = models.CharField(verbose_name=_('Место проживания'), max_length=80, blank=True, null=True)
@@ -18,12 +24,16 @@ class Account(AbstractUser):
     is_katchy = models.BooleanField(verbose_name=_('Катчы'), default=False)
     is_delegat = models.BooleanField(verbose_name=_('Делегат'), default=False)
     image = models.ImageField(verbose_name=_('Аватар'), upload_to='avatars/', blank=True, null=True)
+    region = models.ForeignKey(Region, on_delete=models.SET_NULL, blank=True, null=True)
 
     def __str__(self):
         return self.username
 
     def get_full_name(self):
-        return self.get_full_name()
+        return f'{self.first_name} {self.last_name}'
+
+    class Meta:
+        ordering = ['first_name']
 
 
 class Rubrics(models.Model):
