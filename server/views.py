@@ -16,6 +16,8 @@ from django.db.models.query_utils import Q
 from django.contrib.auth import logout, authenticate, login, update_session_auth_hash
 from django.http import HttpResponse
 from django.shortcuts import render, redirect, get_object_or_404
+from django.utils.translation import gettext as _
+from django.core.paginator import Paginator
 from django.template.loader import render_to_string
 from django.utils.encoding import force_bytes
 from django.contrib.auth.models import User
@@ -70,14 +72,6 @@ def create_news_voting(request, pk):
     return render(request, 'create_news.html', {'form': form})
 
 
-class NewsDetailView(generic.DetailView):
-    model = News
-    template_name = 'post1.html'
-    context_object_name = 'news'
-
-
-
-
 def chat_detail(request, pk):
     chat = get_object_or_404(Chat, id=pk)
     messages = Message.objects.filter(chat=chat)
@@ -105,38 +99,6 @@ def delegats(request):
 
 def settings(request):
     return render(request, 'settings.html')
-
-
-
-# def password_reset_request(request):
-#     if request.method == "POST":
-#         password_reset_form = PasswordResetForm(request.POST)
-#         if password_reset_form.is_valid():
-#             data = password_reset_form.cleaned_data['email']
-#             associated_users = Account.objects.filter(Q(email=data))
-#             if associated_users.exists():
-#                 for user in associated_users:
-#                     subject = "Password Reset Requested"
-#                     email_template_name = "password/password_reset_email.txt"
-#                     c = {
-#                         "email":user.email,
-#                         'domain':'127.0.0.1:8000',
-#                         'site_name': 'Website',
-#                         "uid": urlsafe_base64_encode(force_bytes(user.pk)),
-#                         "user": user,
-#                         'token': default_token_generator.make_token(user),
-#                         'protocol': 'http',
-#                     }
-#                     email = render_to_string(email_template_name, c)
-#                     try:
-#                         send_mail(subject, email, 'admin@example.com' , [user.email], fail_silently=False)
-#                     except BadHeaderError:
-#                         return HttpResponse('Invalid header found.')
-#                     messages.success(request, 'A message with reset password instructions has been sent to your inbox.')
-#                     return render(request, 'message_send.html')
-#             messages.error(request, 'An invalid email has been entered.')
-#     password_reset_form = PasswordResetForm()
-#     return render(request=request, template_name="resetPassword.html", context={"password_reset_form": password_reset_form})
 
 
 def register(request):
@@ -192,7 +154,8 @@ class PasswordsChangeView(PasswordChangeView):
 def indexActive(request):
     print(Account.objects.all())
     rubrics = Rubrics.objects.all().order_by('-id')
-    context = {'rubrics': rubrics, 'register_form': UserRegisterForm, 'login_form': AuthenticationForm}
+    trans = _('привет')
+    context = {'trans': trans, 'rubrics': rubrics, 'register_form': UserRegisterForm, 'login_form': AuthenticationForm}
     return render(request, 'indexActive.html', context)
 
 
@@ -224,23 +187,27 @@ def deleterubrics(request, pk):
     return redirect('index')
 
 
-def post_detail(request, pk):
-    template_name = 'post_detail.html'
-    post = get_object_or_404(Post, id=pk)
-    comments = post.comments.filter(active=True)
+def post1(request, pk):
+    template_name = 'post1.html'
+    news = get_object_or_404(News, id=pk)
+    comments = news.comments.filter(active=True)
     new_comment = None
+    paginator = Paginator(comments, 15)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
     if request.method == 'POST':
         comment_form = CommentForm(data=request.POST)
         if comment_form.is_valid():
 
             new_comment = comment_form.save(commit=False)
-            new_comment.post = post
+            new_comment.news = news
             new_comment.save()
     else:
         comment_form = CommentForm()
 
-    return render(request, template_name, {'post': post,
-                                           'comments': comments,
+    return render(request, template_name, {'comments': comments,
+                                           'news': news,
+                                           'page_obj': page_obj,
                                            'new_comment': new_comment,
                                            'comment_form': comment_form})
 
@@ -263,9 +230,9 @@ def updatecomment(request, pk):
             form = Comment_mode_Form(request.POST, instance=data)
             if form.is_valid():
                 form.save()
-                return redirect ('commentlist')
+                return redirect('commentlist')
         context = {
-            "form":form
+            "form": form
         }
         return render(request, 'updatecomment.html', context)
     return HttpResponse('Imposible to ahead')

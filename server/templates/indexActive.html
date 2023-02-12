@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load i18n %}
 
 {% block links %}
 <link rel="stylesheet" href="{% static 'css/index.css' %}">
@@ -20,39 +21,47 @@
                                 <li class="listActive">
                                     <a href="{% url 'home' %}">
                                         <div><img src="{% static 'images/profile/list.svg' %}" alt="list"></div>
-                                        <h4>Лента</h4>
+                                        <h4>{% trans 'Лента' %}</h4>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="{% url 'chats' %}">
                                         <div> <span>2</span><img src="{% static 'images/profile/list.svg' %}" alt="list"></div>
-                                        <h4>Сообщения</h4>
+                                        <h4>{% trans 'Сообщения' %}</h4>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="{% url 'delegats' %}">
                                         <div><img src="{% static 'images/profile/list.svg' %}" alt="list"></div>
-                                        <h4>Делегаты</h4>
+                                        <h4>{% trans 'Делегаты' %}</h4>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="{% url 'rubrics' %}">
                                         <div><img src="{% static 'images/profile/list.svg' %}" alt="list"></div>
-                                        <h4>Рубрики</h4>
+                                        <h4>{% trans 'Рубрики' %}</h4>
                                     </a>
                                 </li>
                                 {% if user.is_authenticated %}
                                 <li>
                                     <a href="{% url 'profile' user.pk %}">
                                         <div><img src="{% static 'images/profile/profile.svg' %}" alt="list"></div>
-                                        <h4>Профиль</h4>
+                                        <h4>{% trans 'Профиль' %}</h4>
+                                    </a>
+                                </li>
+                                {% endif %}
+                                {% if user.is_superuser %}
+                                <li>
+                                    <a href="{% url 'commentlist' %}">
+                                        <div><img src="{% static 'images/profile/profile.svg' %}" alt="list"></div>
+                                        <h4>{% trans 'Коментарии' %}</h4>
                                     </a>
                                 </li>
                                 {% endif %}
                             </ul>
                         </div>
                         <div class="profileSettings">
-                            <h3>Настройки</h3>
+                            <h3>{% trans 'Настройки' %}</h3>
                             <ul>
                                 <li>
                                     <a href="{% url 'settings' %}">
@@ -129,7 +138,7 @@
                     </section>
                    <section class="RegistrPop hide">
                         <div id="modalReg" class="modal">
-                            <div class="close"><img src="{% static 'images/people/plus.svg" alt=""></div>
+                            <div class="close"><img src="{% static 'images/people/plus.svg' %}" alt=""></div>
                             <div id="backReg" class="back hide"><img src="{% static 'images/security/back1.svg' %}" alt=""></div>
                             <div class="left"><img src="{% static 'images/security/welcome.png' %}" alt="img"></div>
                             <form action="{% url 'register' %}" class="right" method="post">
@@ -277,20 +286,20 @@
                     </section>
                    <section class="people">
                         <div class="peopleTitle">
-                            <h3>Люди</h3>
+                            <h3>{% trans 'Люди' %}</h3>
                             <div class="peopleTitleActions">
                                 <div><img src="{% static 'images/people/plus.svg' %}" alt="img"></div>
                                 <div><img src="{% static 'images/people/triple.svg' %}" alt="img"></div>
                             </div>
                         </div>
                         <ul>
-                            <li>Делегаты</li>
-                            <li>Тор Ага</li>
-                            <li>Заместител</li>
-                            <li>Катчы</li>
+                            <li>{% trans 'Делегаты' %}</li>
+                            <li>{% trans 'Тор Ага' %}</li>
+                            <li>{% trans 'Заместител' %}</li>
+                            <li>{% trans 'Катчы' %}</li>
                         </ul>
                         <div class="peopleTitle">
-                            <h3>Рубрики</h3>
+                            <h3>{% trans 'Рубрики' %}</h3>
                             <div class="peopleTitleActions">
                                 <div><img src="{% static 'images/people/plus.svg' %}" alt="img"></div>
                                 <div><img src="{% static 'images/people/triple.svg' %}" alt="img"></div>

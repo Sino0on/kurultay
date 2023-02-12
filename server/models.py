@@ -50,21 +50,6 @@ class Post(models.Model):
         return self.title
 
 
-class Comment(models.Model):
-    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='comments')
-    name = models.CharField(max_length=80)
-    email = models.EmailField()
-    body = models.TextField()
-    created_on = models.DateTimeField(auto_now_add=True)
-    active = models.BooleanField(default=False, verbose_name='Active')
-
-    class Meta:
-        ordering = ['-created_on']
-
-    def __str__(self):
-        return 'Comment {} by {}'.format(self.body, self.name)
-
-
 class Voting(models.Model):
     title = models.CharField(max_length=123)
     content = models.TextField()
@@ -173,4 +158,19 @@ class QuestionMessage(models.Model):
         verbose_name = 'Вопрос от товарища'
         verbose_name_plural = 'Вопросы от людей'
         ordering = ['-created_date']
+
+
+class Comment(models.Model):
+    news = models.ForeignKey(News, on_delete=models.CASCADE, related_name='comments')
+    name = models.CharField(max_length=80)
+    email = models.EmailField()
+    body = models.TextField()
+    created_on = models.DateTimeField(auto_now_add=True)
+    active = models.BooleanField(default=False, verbose_name='Active')
+
+    class Meta:
+        ordering = ['-created_on']
+
+    def __str__(self):
+        return 'Comment {} by {}'.format(self.body, self.name)
 
