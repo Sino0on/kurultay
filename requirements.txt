@@ -26,4 +26,4 @@ sqlparse==0.4.3
 Twisted==22.8.0
 txaio==22.2.1
 typing-extensions==4.4.0
-zope.interface==5.5.0
+backports.zoneinfo

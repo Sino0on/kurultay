@@ -4,7 +4,6 @@ from .models import *
 from ckeditor.widgets import CKEditorWidget
 from ckeditor_uploader.widgets import CKEditorUploadingWidget
 from modeltranslation.admin import TranslationAdmin
-
 from .models import Rubrics, Account, Comment, Post
 
 
@@ -23,16 +22,16 @@ admin.site.register(Account)
 admin.site.register(Rubrics)
 admin.site.register(Post)
 
-class NewsAdminForm(forms.ModelForm):
-    content = forms.CharField(widget=CKEditorUploadingWidget())
+# class NewsAdminForm(forms.ModelForm):
+#     content = forms.CharField(widget=CKEditorUploadingWidget())
+#
+#     class Meta:
+#         model = News
+#         fields = '__all__'
 
-    class Meta:
-        model = News
-        fields = '__all__'
 
-
-class NewsAdmin(admin.ModelAdmin):
-    form = NewsAdminForm
+# class NewsAdmin(admin.ModelAdmin):
+#     form = NewsAdminForm
 
 
 admin.site.register(Voting)
