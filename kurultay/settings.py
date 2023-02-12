@@ -205,6 +205,7 @@ USE_I18N = True
 
 USE_TZ = True
 
+from django.utils.translation import gettext_lazy as _
 
 LANGUAGES = [
     ('en', _('English')),
@@ -214,6 +215,11 @@ LANGUAGES = [
 
 MODELTRANSLATION_DEFAULT_LANGUAGE = 'ru'
 MODELTRANSLATION_PREPOPULATE_LANGUAGE = 'en'
+
+LOCAL_PATHS = [
+    os.path.join(BASE_DIR, 'locale/'),
+]
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
