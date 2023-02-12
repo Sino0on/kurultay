@@ -22,6 +22,17 @@ class UserRegisterForm(UserCreationForm):
         }
 
 
+class UserUpdateForm(forms.ModelForm):
+    class Meta:
+        model = Account
+        fields = ['first_name', 'last_name', 'username', 'email', 'birth_of_place', 'birth_of_date', 'living_place', 'nation', 'occupation', 'phone_number', 'image', 'region']
+
+        widgets = {
+            'username': forms.TextInput(attrs={'class': 'form-control'}),
+            'image': forms.FileInput(attrs={'class': 'form-control'}),
+        }
+
+
 class RubricForm(forms.ModelForm):
 
     class Meta:
