@@ -86,49 +86,68 @@
                         <div class="prevEnd"></div>
                         <div class="PostEnd">
                             <div class="like">
-                                <img class="likeActive" src="{% static 'images/news/likeN.svg' %}" alt="">
-                                <img src="{% static 'images/news/like.svg' %}" alt="">
+                                <img class="likeActive" src="images/news/likeN.svg" alt="">
+                                <img src="images/news/like.svg" alt="">
                                     <!-- <span>Понравилось</span> -->
                                 <div class="likeCount">
-                                    <span>34k людям понравилось</span>
+                                    <span></span>
                                 </div>
                             </div>
                             <div href="post1.html" class="comments">
-                                <p>Комментарии <span>420</span></p>
+                                <p>Комментарии <span>{{ comments.count }}</span></p>
                             </div>
                         </div>
+                        {% if new_comment %}
+                            <div class="alert alert-success" role="alert">Ваш коментарий отправлен</div>
+                        {% else %}
                         <div class="comment">
-                            <h2>Коментарий</h2>
-                            <form action="">
+                            <h2>Оставить коментарий</h2>
+                            <form action="" method="post">
+                                {% csrf_token %}
                                 <div class="forName">
                                     <div>
                                         <label for="text">Имя: </label>
-                                        <input required name="text" type="text" placeholder="Ваше Имя">
+                                        {{ comment_form.name }}
                                     </div>
                                     <div>
                                         <label for="email">Email: </label>
-                                        <input name="email" required type="email" placeholder="Ваш Email">
+                                        {{ comment_form.email }}
                                     </div>
                                 </div>
                                 <div class="forComment">
-                                    <input required type="text" placeholder="Ваш комментарий...">
-                                    <button type="submit"><img src="images/chat1/send.svg" alt=""></button>
+                                    {{ comment_form.body }}
+                                    <button type="submit"><img src="{% static 'images/chat1/send.svg' %}" alt=""></button>
                                 </div>
                             </form>
+
+                        </div>
+                        {% endif %}
+
+                        <div class="comment">
+                            <h2>{{ comments.count }} comments</h2>
+
+                            {% for comment in page_obj %}
                             <div class="otherComments">
                                 <div class="otherCommentsE">
-                                    <h3>Кайрат</h3>
-                                    <p class="textComment">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique obcaecati nihil optio itaque, delectus distinctio?</p>
+                                    <h3>{{ comment.name }}</h3>{{ comment.created_on }}
+                                    <p class="textComment">{{ comment.body | linebreaks}}</p>
                                 </div>
-                                <div class="otherCommentsE">
-                                    <h3 class="nameC">Дастан</h3>
-                                    <p class="textComment">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique obcaecati nihil optio itaque, delectus distinctio? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aspernatur vero atque, veniam cumque non doloremque at fuga blanditiis, quibusdam expedita ab eius assumenda vel incidunt?</p>
-                                </div>
-                                <div class="otherCommentsE">
-                                    <h3>Байэл</h3>
-                                    <p class="textComment">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique obcaecati nihil optio itaque, delectus distinctio? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aspernatur vero atque, veniam cumque non doloremque at fuga blanditiis, quibusdam expedita ab eius assumenda vel incidunt?</p>
-                                </div>
+
                             </div>
+                            {% endfor %}
+
+                            <div>
+                                <span>
+                                    {% if page_obj.has_previous %}
+                                        <a href="?page={{ page_obj.previous_page_number }}" >Previous</a>
+                                    {% endif %}
+                                        <span>{{ page_obj.number }}</span>
+                                    {% if page_obj.has_next %}
+                                    <a href="?page={{ page_obj.next_page_number }}" >Next</a>
+                                    {% endif %}
+                                </span>
+                            </div>
+
                         </div>
                     </section>
                     

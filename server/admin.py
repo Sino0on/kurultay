@@ -10,7 +10,7 @@ from .models import Rubrics, Account, Comment, Post
 
 @admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):
-    list_display = ('name', 'body', 'post', 'created_on', 'active')
+    list_display = ('name', 'body', 'news', 'created_on', 'active')
     list_filter = ('active', 'created_on')
     search_fields = ('name', 'email', 'body')
     actions = ['approve_comments']
