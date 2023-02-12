@@ -21,13 +21,13 @@
                                 <li class="listActive">
                                     <a href="{% url 'home' %}">
                                         <div><img src="{% static 'images/profile/list.svg' %}" alt="list"></div>
-                                        <h4>{% trans 'Лента' %}</h4>
+                                        <h4>{% translate 'Лента' %}</h4>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="{% url 'chats' %}">
                                         <div> <span>2</span><img src="{% static 'images/profile/list.svg' %}" alt="list"></div>
-                                        <h4>{% trans 'Сообщения' %}</h4>
+                                        <h4>{% translate 'Сообщения' %}</h4>
                                     </a>
                                 </li>
                                 <li>
@@ -190,21 +190,21 @@
                                     <div class="formDate">
                                         <div class="pole">
                                             <label for="mob1firstName">Имя</label>
-                                            <input required placeholder="Введите ваше имя" id="mob1firstName" name="firstName" type="text">
+                                            {{ register_form.first_name }}
                                             <span><img src="{% static 'images/security/forfio.svg' %}" alt="svg"></span>
                                         </div>
                                         <div class="pole">
                                             <label for="mob1lastName">Фамилия</label>
-                                            <input required placeholder="Введите вашу фамилию" id="mob1lastName" name="lastName" type="text">
+                                            {{ register_form.first_name }}
                                             <span><img src="{% static 'images/security/forfio.svg' %}" alt="svg"></span>
                                         </div>
                                         <div class="pole">
                                             <label for="mob1dateTime">Дата рождения</label>
-                                            <input required id="mob1dateTime" name="dateTime" type="date">
+                                            {{ register_form.first_name }}
                                         </div>
                                         <div class="pole">
                                             <label for="mob1email">Email почта</label>
-                                            <input required placeholder="Введите вашу почту" id="mob1email" name="email" type="email">
+                                            {{ register_form.first_name }}
                                             <span><img src="{% static 'images/security/foremail.svg' %}" alt="svg"></span>
                                         </div>
                                     </div>
@@ -218,12 +218,12 @@
                                     <div class="formDate">
                                         <div class="pole">
                                             <label for="newMob">Пароль</label>
-                                            <input required id="newMob" placeholder="Введите ваш пароль" name="new" type="password">
+                                            {{ register_form.first_name }}
                                             <span class="eyeForMob2"><img src="{% static 'images/security/eye.svg' %}" alt=""></span>
                                         </div>
                                         <div class="pole">
                                             <label for="passMob">Подтверждение</label>
-                                            <input required id="passMob" placeholder="Повторите пароль" name="pass" type="password">
+                                            {{ register_form.first_name }}
                                             <span class="eyeForPassMob2"><img src="{% static 'images/security/eye.svg' %}" alt=""></span>
                                         </div>
                                         <p>У вас есть аккаунт? <span id="voiti1">Войти</span></p>
@@ -241,7 +241,7 @@
                                 <h2>Авторизация</h2>
                                 <div class="formDatas">
                                     <div class="pole">
-                                        <label for="email2">Логин</label>
+                                        <label for="das">Логин</label>
                                         {{ login_form.username }}
                                         {% csrf_token %}
                                         <span><img src="{% static 'images/security/forfio.svg' %}" alt="svg"></span>
@@ -262,7 +262,7 @@
                                     <h2>Авторизация</h2>
                                     {% csrf_token %}
                                     <div class="pole">
-                                        <label for="Mobemail2">Ваш логин</label>
+                                        <label for="das">Ваш логин</label>
                                         {{ login_form.username }}
                                         <span><img src="{% static 'images/security/forfio.svg' %}" alt="svg"></span>
                                     </div>

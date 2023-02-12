@@ -10,6 +10,9 @@ class Region(models.Model):
     title = models.CharField(max_length=123)
     created_date = models.DateTimeField(auto_now_add=True)
 
+    def __str__(self):
+        return self.title
+
 
 class Account(AbstractUser):
     email = models.EmailField(unique=True)

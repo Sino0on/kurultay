@@ -126,7 +126,7 @@ header .menuInner .menuRight {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 114px;
+  width: 0px;
 }
 @media (max-width: 660px) {
   header .menuInner .menuRight {
@@ -467,6 +467,13 @@ main .main .profileList ul .listActive a:hover {
   -webkit-transform: scale(1);
           transform: scale(1);
 }
+a {
+    text-decoration: none;
+}
+main .main .delegats a {
+    text-decoration: none;
+}
+
 main .main .profileList ul li a {
   text-decoration: none;
   cursor: pointer;

@@ -111,6 +111,7 @@ class DelegatListView(generic.ListView):
         context = super(DelegatListView, self).get_context_data(**kwargs)
         context['filter'] = UserFilterForm().form
         print('yes')
+        context['regions'] = Region.objects.all()
         print(context['filter'])
         return context
 
@@ -121,7 +122,14 @@ def delegats(request):
 
 
 def settings(request):
-    return render(request, 'settings.html')
+    form = UserUpdateForm(instance=request.user)
+    if request.method == "POST":
+        print('post')
+        form = UserUpdateForm(request.POST, request.FILES, instance=request.user)
+        if form.is_valid():
+            form.save()
+        print(form.errors)
+    return render(request, 'settings.html', {'form': form})
 
 
 def register(request):

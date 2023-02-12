@@ -38,7 +38,9 @@ admin.site.register(Voting)
 admin.site.register(Question)
 # admin.site.register(News, NewsAdmin)
 admin.site.register(Chat)
+admin.site.register(Region)
 admin.site.register(Message)
+
 
 @admin.register(News)
 class NewsAdmin(TranslationAdmin):

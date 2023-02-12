@@ -68,49 +68,72 @@
                         </div>
                     </section>
                     
-                    <section class="setting">
+                    <section class="headMob">
+                        <a href="profile.html" class="back"><img src="images/security/back1.svg" alt=""></a>
+                        <h2>Основные настройки</h2>
+                    </section>
+                    <section id="introJs" class="setting">
                         <h3>Настройки</h3>
-                        <div class="avatar"><img src="images/header/ava.svg" alt="ava"></div>
-                        <form action="" class="settingForm">
+                        <form action="{% url 'settings' %}" class="settingForm" enctype="multipart/form-data" method="post">
+                            {% csrf_token %}
+                        <div class="avatar">
+                            {% if user.image %}
+                            <img src="{{ user.image.url }}" alt="ava">
+                            {% else %}
+                            <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png" alt="ava">
+                            {% endif %}
+                            <div class="forCamera">
+                                {{ form.image }}
+                                <span><img src="{% static 'images/profile/kamera.svg' %}" alt=""></span>
+                            </div>
+                        </div>
+
                             <div class="settingFormE">
                                 <label for="userName">username:</label>
-                                <input placeholder="bakyt_sultanov" id="userName" name="userName" type="text">
+                                {{ form.username }}
                             </div>
                             <div class="settingFormE">
                                 <label for="firstName">Имя:</label>
-                                <input placeholder="Бакыт" id="firstName" name="firstName" type="text">
+                                {{ form.first_name }}
                             </div>
                             <div class="settingFormE">
                                 <label for="lastName">Фамилия:</label>
-                                <input placeholder="Султанов" id="lastName" name="lastName" type="text">
+                                {{ form.last_name }}
                             </div>
                             <div class="settingFormE forTextarea">
                                 <label for="about">Краткая информация:</label>
-                                <textarea placeholder="Расскажите о себе" name="about" id="about" cols="30" rows="3"></textarea>
+                                {{ form.description }}
                             </div>
                             <div class="settingFormDate">
-                                <label>День рождения:</label>
-                                <div class="forDate">
-                                    <input id="day" placeholder="20" type="number">
-                                    <select name="select">
-                                        <option value="0" selected disabled>Месяц</option>
-                                        <option value="1">Январь</option>
-                                        <option value="2">Февраль</option>
-                                        <option value="3">Март</option>
-                                        <option value="4">Апрель</option>
-                                        <option value="5">Май</option>
-                                        <option value="6">Июнь</option>
-                                        <option value="7">Июль</option>
-                                        <option value="8">Август</option>
-                                        <option value="9">Сентябрь</option>
-                                        <option value="10">Октябрь</option>
-                                        <option value="11">Ноябрь</option>
-                                        <option value="12">Декабрь</option>
-                                    </select>
-                                    <input id="day" placeholder="2000" type="number">
-                                </div >
+                                <label>Место рождения:</label>
+                                {{ form.birth_of_place }}
                             </div>
-                            <div id="introJs" class="settingActions">
+                            <div class="settingFormE">
+                                <label>Почта:</label>
+                                {{ form.email }}
+                            </div>
+                            <div class="settingFormE">
+                                <label for="lastName">Место проживания:</label>
+                                {{ form.living_place }}
+                            </div>
+                            <div class="settingFormE">
+                                <label for="lastName">Нация:</label>
+                                {{ form.nation }}
+                            </div>
+                            <div class="settingFormE">
+                                <label for="lastName">Профессия:</label>
+                                {{ form.occupation }}
+                            </div>
+                            <div class="settingFormE">
+                                <label for="lastName">Номер телефона:</label>
+                                {{ form.phone_number }}
+                            </div>
+                            <div class="settingFormE">
+                                <label for="lastName">Регион:</label>
+                                {{ form.region }}
+                            </div>
+
+                            <div class="settingActions">
                                 <input class="reset" type="reset" value="Отменить">
                                 <input class="save" type="submit" value="Сохранить">
                             </div>
