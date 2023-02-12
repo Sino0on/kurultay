@@ -12,3 +12,8 @@ urlpatterns = [
     path('', include('server.urls')),
     prefix_default_language=False
 )
+
+if 'rosetta' in settings.INSTALLED_APPS:
+    urlpatterns += [
+        path('rosetta/', include('rosetta.urls'))
+    ]

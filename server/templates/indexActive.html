@@ -66,19 +66,19 @@
                                 <li>
                                     <a href="{% url 'settings' %}">
                                         <div><img src="{% static 'images/profile/settings.svg' %}" alt=""></div>
-                                        <h4>Настройки</h4>
+                                        <h4>{% trans 'Настройки' %}</h4>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="{% url 'security' %}">
                                         <div><img src="{% static 'images/profile/security.svg' %}" alt=""></div>
-                                        <h4>Безопасность</h4>
+                                        <h4>{% trans 'Безопасность' %}</h4>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="{% url 'logout' %}">
                                         <div><img src="{% static 'images/profile/quit.svg' %}" alt=""></div>
-                                        <h4>Выйти</h4>
+                                        <h4>{% trans 'Выйти' %}</h4>
                                     </a>
                                 </li>
                             </ul>
@@ -103,12 +103,12 @@
                                     <img class="likeActive" src="{% static 'images/news/likeN.svg' %}" alt="">
                                     <img src="{% static 'images/news/like.svg' %}" alt="">
                                     <div class="likeCount">
-                                        <span>34k людям понравилось</span>
+                                        <span></span>
                                     </div>
                                 </div>
                                 <div class="share">
                                     <img src="{% static 'images/news/share.svg' %}" alt="">
-                                    <span>Поделиться</span>
+                                    <span>{% trans 'Поделиться' %}</span>
                                 </div>
                             </div>
 
@@ -123,12 +123,12 @@
                                     <img src="{% static 'images/news/likeN.svg' %}" alt="">
                                     <img class="likeActive" src="{% static 'images/news/like.svg' %}" alt="">
                                     <div class="likeCount">
-                                        <span>34k людям понравилось</span>
+                                        <span></span>
                                     </div>
                                 </div>
                                 <div class="share">
                                     <img src="{% static 'images/news/share.svg' %}" alt="">
-                                    <span>Поделиться</span>
+                                    <span>{% trans 'Поделиться' %}</span>
                                 </div>
                             </div>
                         </div >
@@ -286,20 +286,20 @@
                     </section>
                    <section class="people">
                         <div class="peopleTitle">
-                            <h3>{% trans 'Люди' %}</h3>
+                            <h3>Люди</h3>
                             <div class="peopleTitleActions">
                                 <div><img src="{% static 'images/people/plus.svg' %}" alt="img"></div>
                                 <div><img src="{% static 'images/people/triple.svg' %}" alt="img"></div>
                             </div>
                         </div>
                         <ul>
-                            <li>{% trans 'Делегаты' %}</li>
-                            <li>{% trans 'Тор Ага' %}</li>
-                            <li>{% trans 'Заместител' %}</li>
-                            <li>{% trans 'Катчы' %}</li>
+                            <li>Делегаты</li>
+                            <li>Тор Ага</li>
+                            <li>Заместител</li>
+                            <li>Катчы</li>
                         </ul>
                         <div class="peopleTitle">
-                            <h3>{% trans 'Рубрики' %}</h3>
+                            <h3>Рубрики</h3>
                             <div class="peopleTitleActions">
                                 <div><img src="{% static 'images/people/plus.svg' %}" alt="img"></div>
                                 <div><img src="{% static 'images/people/triple.svg' %}" alt="img"></div>
