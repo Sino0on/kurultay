@@ -12,7 +12,7 @@
         {% block content %}
         <form action="" method="post" enctype="multipart/form-data">
             {% csrf_token %}
-            <div>{{ form.post }}</div>
+            <div>{{ form.news }}</div>
             <div>{{ form.name }}</div>
             <div>{{ form.email}}</div>
             <div>{{ form.body }}</div>

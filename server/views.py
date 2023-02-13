@@ -281,4 +281,5 @@ def rubrics(request):
     context = {'rubrics': rubrics}
     return render(request, 'rubrics.html', context)
 
-
+def set_news(request):
+    return render(request, 'new/setNews.html')

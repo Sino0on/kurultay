@@ -21,32 +21,32 @@
                                 <li class="listActive">
                                     <a href="{% url 'home' %}">
                                         <div><img src="{% static 'images/profile/list.svg' %}" alt="list"></div>
-                                        <h4>{% translate 'Лента' %}</h4>
+                                        <h4>{% translate 'Newsline' %}</h4>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="{% url 'chats' %}">
                                         <div> <span>2</span><img src="{% static 'images/profile/list.svg' %}" alt="list"></div>
-                                        <h4>{% translate 'Сообщения' %}</h4>
+                                        <h4>{% translate 'Messages' %}</h4>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="{% url 'delegats' %}">
                                         <div><img src="{% static 'images/profile/list.svg' %}" alt="list"></div>
-                                        <h4>{% trans 'Делегаты' %}</h4>
+                                        <h4>{% translate 'Delegates' %}</h4>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="{% url 'rubrics' %}">
                                         <div><img src="{% static 'images/profile/list.svg' %}" alt="list"></div>
-                                        <h4>{% trans 'Рубрики' %}</h4>
+                                        <h4>{% translate 'Rubrics' %}</h4>
                                     </a>
                                 </li>
                                 {% if user.is_authenticated %}
                                 <li>
                                     <a href="{% url 'profile' user.pk %}">
                                         <div><img src="{% static 'images/profile/profile.svg' %}" alt="list"></div>
-                                        <h4>{% trans 'Профиль' %}</h4>
+                                        <h4>{% translate 'Profile' %}</h4>
                                     </a>
                                 </li>
                                 {% endif %}
@@ -54,31 +54,31 @@
                                 <li>
                                     <a href="{% url 'commentlist' %}">
                                         <div><img src="{% static 'images/profile/profile.svg' %}" alt="list"></div>
-                                        <h4>{% trans 'Коментарии' %}</h4>
+                                        <h4>{% translate 'Comments' %}</h4>
                                     </a>
                                 </li>
                                 {% endif %}
                             </ul>
                         </div>
                         <div class="profileSettings">
-                            <h3>{% trans 'Настройки' %}</h3>
+                            <h3>{% translate 'Settings' %}</h3>
                             <ul>
                                 <li>
                                     <a href="{% url 'settings' %}">
                                         <div><img src="{% static 'images/profile/settings.svg' %}" alt=""></div>
-                                        <h4>{% trans 'Настройки' %}</h4>
+                                        <h4>{% translate 'Settings' %}</h4>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="{% url 'security' %}">
                                         <div><img src="{% static 'images/profile/security.svg' %}" alt=""></div>
-                                        <h4>{% trans 'Безопасность' %}</h4>
+                                        <h4>{% translate 'Security' %}</h4>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="{% url 'logout' %}">
                                         <div><img src="{% static 'images/profile/quit.svg' %}" alt=""></div>
-                                        <h4>{% trans 'Выйти' %}</h4>
+                                        <h4>{% translate 'Logout' %}</h4>
                                     </a>
                                 </li>
                             </ul>
@@ -108,7 +108,7 @@
                                 </div>
                                 <div class="share">
                                     <img src="{% static 'images/news/share.svg' %}" alt="">
-                                    <span>{% trans 'Поделиться' %}</span>
+                                    <span>{% translate 'Share' %}</span>
                                 </div>
                             </div>
 
