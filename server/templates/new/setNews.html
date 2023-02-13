@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,11 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="fonts/Segoe/stylesheet.css">
-    <link rel="stylesheet" href="fonts/Sora/stylesheet.css">
-    <link rel="stylesheet" href="css/bundle.css">
-    <link rel="stylesheet" href="css/post.css">
-    <link rel="stylesheet" href="css/setNews.css">
+    <link rel="stylesheet" href="{% static 'fonts/Segoe/stylesheet.css' %}">
+    <link rel="stylesheet" href="{% static 'fonts/Sora/stylesheet.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bundle.css' %}">
+    <link rel="stylesheet" href="{% static 'css/post.css' %}">
+    <link rel="stylesheet" href="{% static 'css/setNews.css' %}">
     <title>Kurultai beta</title>
 </head>
 <body>
@@ -17,19 +18,19 @@
         <header id="headerJs">
             <div class="container">
                 <div class="menuInner">
-                    <a href="#"><div class="menuLogo"><img src="images/header/logo.svg" alt="logo"></div></a>
+                    <a href="#"><div class="menuLogo"><img src="{% static 'images/header/logo.svg' %}" alt="logo"></div></a>
                     <div class="search">
-                        <img src="images/header/logotext.svg" alt="">
+                        <img src="{% static 'images/header/logotext.svg' %}" alt="">
                     </div>
                     <div class="menuRight">
                         <div class="ava">
-                            <a href="profile.html" class="avaImg"><img src="images/header/ava.svg" alt="image"></a>
-                            <div class="avaArow"><img src="images/header/down.svg" alt="image"></div>
+                            <a href="profile.html" class="avaImg"><img src="{% static 'images/header/ava.svg' %}" alt="image"></a>
+                            <div class="avaArow"><img src="{% static 'images/header/down.svg' %}" alt="image"></div>
                         </div>
                         <div class="menuActions" >
-                            <div class="menuActionsE"><img src="images/header/setting.svg" alt="image"></div>
-                            <div class="menuActionsE"><img src="images/header/lamp.svg" alt="image"></div>
-                            <div class="menuActionsE"><img src="images/header/notification.svg" alt="image"></div>
+                            <div class="menuActionsE"><img src="{% static 'images/header/setting.svg' %}" alt="image"></div>
+                            <div class="menuActionsE"><img src="{% static 'images/header/lamp.svg' %}" alt="image"></div>
+                            <div class="menuActionsE"><img src="{% static 'images/header/notification.svg' %}" alt="image"></div>
                         </div >
                     </div>
                     <div class="menuBurger" id="menu">
@@ -37,12 +38,12 @@
                     </div>
                     <div class="burgerActive hide" >
                         <div class="ava forProfile" >
-                            <div class="avaImg"><img src="images/header/ava.svg" alt="image"></div>
+                            <div class="avaImg"><img src="{% static 'images/header/ava.svg' %}" alt="image"></div>
                         </div>
                         <div class="menuActions" >
-                            <div class="menuActionsEb"><img src="images/header/setting.svg" alt="image"></div>
-                            <div class="menuActionsEb"><img src="images/header/lamp.svg" alt="image"></div>
-                            <div class="menuActionsEb"><img src="images/header/notification.svg" alt="image"></div>
+                            <div class="menuActionsEb"><img src="{% static 'images/header/setting.svg' %}" alt="image"></div>
+                            <div class="menuActionsEb"><img src="{% static 'images/header/lamp.svg' %}" alt="image"></div>
+                            <div class="menuActionsEb"><img src="{% static 'images/header/notification.svg' %}" alt="image"></div>
                         </div >
                     </div>
                 </div>
@@ -56,31 +57,31 @@
                             <ul>
                                 <li>
                                     <a href="indexActive.html">
-                                        <div><img src="images/profile/list.svg" alt="list"></div>
+                                        <div><img src="{% static 'images/profile/list.svg' %}" alt="list"></div>
                                         <h4>Лента</h4>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="chats.html">
-                                        <div> <span>2</span><img src="images/profile/list.svg" alt="list"></div>
+                                        <div> <span>2</span><img src="{% static 'images/profile/list.svg' %}" alt="list"></div>
                                         <h4>Сообщения</h4>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="delegats.html">
-                                        <div><img src="images/profile/list.svg" alt="list"></div>
+                                        <div><img src="{% static 'images/profile/list.svg' %}" alt="list"></div>
                                         <h4>Делегаты</h4>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="rubrics.html">
-                                        <div><img src="images/profile/list.svg" alt="list"></div>
+                                        <div><img src="{% static 'images/profile/list.svg' %}"  alt="list"></div>
                                         <h4>Рубрики</h4>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="profile.html">
-                                        <div><img src="images/profile/profile.svg" alt="list"></div>
+                                        <div><img src="{% static 'images/profile/profile.svg' %}" alt="list"></div>
                                         <h4>Профиль</h4>
                                     </a>
                                 </li>
@@ -91,19 +92,19 @@
                             <ul>
                                 <li>
                                     <a href="settings.html">
-                                        <div><img src="images/profile/settings.svg" alt=""></div>
+                                        <div><img src="{% static 'images/profile/settings.svg' %}" alt=""></div>
                                         <h4>Настройки</h4>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="security.html">
-                                        <div><img src="images/profile/security.svg" alt=""></div>
+                                        <div><img src="{% static 'images/profile/security.svg' %}" alt=""></div>
                                         <h4>Безопасность</h4>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="index.html">
-                                        <div><img src="images/profile/quit.svg" alt=""></div>
+                                        <div><img src="{% static 'images/profile/quit.svg' %}" alt=""></div>
                                         <h4>Выйти</h4>
                                     </a>
                                 </li>
@@ -118,12 +119,12 @@
                                     <div class="pole">
                                         <label for="email2">Email почта</label>
                                         <input required="" placeholder="Введите вашу почту" id="email2" name="email2" type="email">
-                                        <span><img src="images/security/forfio.svg" alt="svg"></span>
+                                        <span><img src="{% static 'images/security/forfio.svg' %}" alt="svg"></span>
                                     </div>
                                     <div class="pole">
                                         <label for="password">Пароль</label>
                                         <input required="" id="password" placeholder="Введите ваш пароль" name="new" type="password">
-                                        <span class="eyeForpasword"><img src="images/security/eye.svg" alt="svg"></span>
+                                        <span class="eyeForpasword"><img src="{% static 'images/security/eye.svg' %}" alt="svg"></span>
                                     </div>
                                     <a href="resetPassword.html">Забыли пароль?</a>
                                 </div>
@@ -137,16 +138,16 @@
         <footer class="footer">
             <div class="footerInner">
                 <a href="indexActive.html">
-                    <div><img src="images/modileFooter/home.svg" alt=""></div>
+                    <div><img src="{% static 'images/modileFooter/home.svg' %}" alt=""></div>
                 </a>
                 <a href="peopleMob.html">
-                    <div><img src="images/modileFooter/people.svg" alt=""></div>
+                    <div><img src="{% static 'images/modileFooter/people.svg' %}" alt=""></div>
                 </a>
                 <a href="chats.html">
-                    <div><img src="images/modileFooter/message.svg" alt=""></div>
+                    <div><img src="{% static 'images/modileFooter/message.svg' %}" alt=""></div>
                 </a>
                 <a href="profile.html">
-                    <div><img src="images/modileFooter/profile.svg" alt=""></div>
+                    <div><img src="{% static 'images/modileFooter/profile.svg' %}" alt=""></div>
                 </a>
             </div>
         </footer>

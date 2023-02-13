@@ -37,7 +37,7 @@ class NewsListView(generic.ListView):
         context['register_form'] = UserRegisterForm
         print(context['register_form'])
         print('orin')
-
+        context['text'] = _('Dastan')
         context['login_form'] = AuthenticationForm
         return context
 
@@ -281,4 +281,5 @@ def rubrics(request):
     context = {'rubrics': rubrics}
     return render(request, 'rubrics.html', context)
 
-
+def set_news(request):
+    return render(request, 'new/setNews.html')

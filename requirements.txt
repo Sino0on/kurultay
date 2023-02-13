@@ -12,6 +12,7 @@ cryptography==38.0.1
 daphne==4.0.0
 Django==4.1.2
 django-ckeditor==6.5.1
+django-filter==22.1
 django-js-asset==2.0.0
 django-modeltranslation==0.18.9
 django-rosetta==0.9.8
@@ -31,9 +32,5 @@ sqlparse==0.4.3
 Twisted==22.8.0
 txaio==22.2.1
 typing-extensions==4.4.0
-<<<<<<< HEAD
-backports.zoneinfo
-=======
 urllib3==1.26.14
 zope.interface==5.5.0
->>>>>>> refs/remotes/origin/master

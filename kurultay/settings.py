@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'ckeditor',
     'ckeditor_uploader',
     'django.contrib.humanize',
+    'rosetta',
 ]
 
 
@@ -197,28 +198,28 @@ CKEDITOR_CONFIGS = {
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
-LANGUAGE_CODE = 'ru'
+LANGUAGE_CODE = 'en'
 
 TIME_ZONE = 'Asia/Bishkek'
 
 USE_I18N = True
 
+USE_L10N = True
+
 USE_TZ = True
 
 from django.utils.translation import gettext_lazy as _
 
+
 LANGUAGES = [
-    ('en', _('English')),
-    ('ru', _('Russian')),
-    ('ky', _('Kyrgyz')),
+    ('en', _('Английский')),
+    ('ru', _('Русский')),
+    ('ky', _('Кыргызский')),
 ]
 
-MODELTRANSLATION_DEFAULT_LANGUAGE = 'ru'
-MODELTRANSLATION_PREPOPULATE_LANGUAGE = 'en'
 
-LOCAL_PATHS = [
-    os.path.join(BASE_DIR, 'locale/'),
-]
+LOCAL_PATHS = os.path.join(BASE_DIR, 'locale/')
+
 
 
 # Static files (CSS, JavaScript, Images)
@@ -247,3 +248,6 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'dastan.kubanuulu1@gmail.com'
 EMAIL_HOST_PASSWORD = 'atoxzukpfndshiaa'
 # ACCOUNT_EMAIL_VERIFICATION = 'none'
+
+MODELTRANSLATION_DEFAULT_LANGUAGE = 'ru'
+MODELTRANSLATION_PREPOPULATE_LANGUAGE = 'en'
