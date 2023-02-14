@@ -7,7 +7,7 @@ from django.conf.urls.i18n import i18n_patterns
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('ckeditor/', include('ckeditor_uploader.urls')),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) + i18n_patterns(
+] + i18n_patterns(
     path('i18n/', include('django.conf.urls.i18n')),
     path('', include('server.urls')),
     prefix_default_language=False
@@ -17,3 +17,4 @@ if 'rosetta' in settings.INSTALLED_APPS:
     urlpatterns += [
         path('rosetta/', include('rosetta.urls'))
     ]
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

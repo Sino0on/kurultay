@@ -1,6 +1,7 @@
+Кайрат, [14/2/23 21:34]
 main {
   padding-top: 13px;
-  padding-bottom: 20px;
+  padding-bottom: 0px;
   background: #F0F2F5;
 }
 @media (max-width: 740px) {
@@ -111,10 +112,25 @@ main .main .chatHead {
       -ms-flex-align: center;
           align-items: center;
   margin-bottom: 30px;
+  position: fixed;
+  top: 100px;
+  width: 510px;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  padding: 20px 5px;
+  background: #fff;
+}
+@media (max-width: 1120px) {
+  main .main .chatHead {
+    width: 410px;
+    padding: 20px 5px;
+  }
 }
 @media (max-width: 550px) {
   main .main .chatHead {
     position: fixed;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     top: 0;
     left: 0;
     width: 100%;
@@ -177,7 +193,9 @@ main .main .chatHead .chatActions {
 }
 main .main .chatHead .chatActions .tripleR {
   -webkit-transform: rotate(90deg);
-          transform: rotate(90deg);
+
+Кайрат, [14/2/23 21:34]
+transform: rotate(90deg);
   width: 5px;
   height: 20px;
 }
@@ -230,6 +248,7 @@ main .main .chatBody {
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 15px;
+  padding-top: 60px;
   padding-bottom: 90px;
 }
 @media (max-width: 550px) {
@@ -263,9 +282,13 @@ main .main .chatBody .message .first {
 }
 main .main .chatBody .message .first a {
   width: 40px;
+  height: 40px;
+  overflow: hidden;
 }
 main .main .chatBody .message .first a img {
   width: 100%;
+  height: 100%;
+  margin: 0 auto;
   border-radius: 50%;
 }
 main .main .chatBody .message .first span {
@@ -311,7 +334,7 @@ main .main .chatBody .ownMessage span {
 }
 main .main .chatDown {
   position: absolute;
-  bottom: 10px;
+  bottom: 50px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -325,7 +348,7 @@ main .main .chatDown {
   border-radius: 5px;
   gap: 10px;
   position: fixed;
-  bottom: 0;
+  bottom: 0px;
 }
 @media (max-width: 1120px) {
   main .main .chatDown {
@@ -351,7 +374,9 @@ main .main .chatDown .wrapperFile:hover {
   cursor: pointer;
 }
 main .main .chatDown .wrapperFile input {
-  cursor: pointer;
+
+Кайрат, [14/2/23 21:34]
+cursor: pointer;
   width: 30px;
   height: 30px;
   -webkit-box-sizing: content-box;
@@ -525,7 +550,9 @@ main .main .rightSide .voteForm {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
+
+Кайрат, [14/2/23 21:34]
+-webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 13px;

@@ -25,7 +25,8 @@ urlpatterns = [
     path('register/', register, name='register'),
     path('logout/', logoutpage, name='logout'),
     path('login/', loginpage, name='login'),
-    path('setnews/', set_news, name='setnews'),
+    path('createchats/', createchats, name='createchats'),
+    path('createnews/', createnews, name='createnews'),
 
     path('resetPassword/', PasswordsChangeView.as_view(), name='resetPassword'),
 
