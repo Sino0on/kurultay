@@ -198,7 +198,7 @@ CKEDITOR_CONFIGS = {
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
-LANGUAGE_CODE = 'en'
+LANGUAGE_CODE = 'ru'
 
 TIME_ZONE = 'Asia/Bishkek'
 
@@ -218,7 +218,9 @@ LANGUAGES = [
 ]
 
 
-LOCAL_PATHS = os.path.join(BASE_DIR, 'locale/')
+LOCAL_PATHS = [
+    os.path.join(BASE_DIR, 'locale/'),
+]
 
 
 

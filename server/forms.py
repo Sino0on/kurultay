@@ -55,7 +55,7 @@ class Comment_mode_Form(forms.ModelForm):
 class NewsForm(forms.ModelForm):
     class Meta:
         model = News
-        fields = ['title', 'content', 'preview']
+        fields = '__all__'
 
 
 class UserRegisterForm(UserCreationForm):
@@ -74,3 +74,10 @@ class UserRegisterForm(UserCreationForm):
             'password2': forms.PasswordInput(attrs={'class': 'form-control'}),
 
         }
+
+
+class ChatCreateForm(forms.ModelForm):
+
+    class Meta:
+        model = Chat
+        fields = ('title', 'description', 'avatar', 'is_privat')

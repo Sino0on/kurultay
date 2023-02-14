@@ -281,5 +281,33 @@ def rubrics(request):
     context = {'rubrics': rubrics}
     return render(request, 'rubrics.html', context)
 
-def set_news(request):
-    return render(request, 'new/setNews.html')
+def createnews(request):
+    if request.user.is_superuser:
+        form = NewsForm()
+        if request.method == 'POST':
+            form = NewsForm(request.POST, request.FILES)
+            if form.is_valid():
+                form.save()
+                return redirect('/')
+
+        context = {'form': form}
+
+        return render(request, 'createnews.html', context)
+    return HttpResponse('Impossible to enter page!')
+
+
+def createchats(request):
+    if request.user.is_superuser:
+        form = ChatCreateForm()
+        if request.method == 'POST':
+            form = ChatCreateForm(request.POST, request.FILES)
+            if form.is_valid():
+                form.save()
+                return redirect('/')
+
+        context = {'form': form}
+
+        return render(request, 'createchats.html', context)
+    return HttpResponse('Impossible to enter page!')
+
+

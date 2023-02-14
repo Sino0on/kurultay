@@ -55,8 +55,18 @@ main
                 justify-content: space-between
                 align-items: center
                 margin-bottom: 30px
+                position: fixed
+                top: 100px
+                width: 510px
+                box-sizing: content-box
+                padding: 20px 5px
+                background: #fff
+                @media (max-width: 1120px)
+                    width: 410px
+                    padding: 20px 5p
                 @media (max-width: 550px)
                     position: fixed
+                    box-sizing: border-box
                     top: 0
                     left: 0
                     width: 100%
